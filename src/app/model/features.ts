@@ -45,7 +45,49 @@ export class Features {
             }
         },
         {
-
+            'bigvan': {
+                'pictures': {
+                    '45': {
+                        'base': 'bigvan/45/45base.jpg',
+                        'front': ['bigvan/45/front-blue45.png', 'bigvan/45/front-bone45.png', 'bigvan/45/front-liver45.png']
+                        'hood': ['bigvan/45/hood-blue45.png', 'bigvan/45/hood-bone45.png', 'bigvan/45/hood-liver45.png'],
+                        'roof': ['bigvan/45/roof-blue45.png', 'bigvan/45/roof-bone45.png', 'bigvan/45/roof-liver45.png'],
+                        'sides': ['bigvan/45/side-blue45.png', 'bigvan/45/side-bone45.png', 'bigvan/45/side-liver45.png']
+                    },
+                    'back': {
+                        'base': 'bigvan/back/backbase.jpg',
+                        'back': ['bigvan/back/backblue.png', 'bigvan/back/backbone.png', 'bigvan/back/backliver.png']
+                    },
+                    'front': {
+                        'base': 'bigvan/front/frontbase.jpg',
+                        'front': ['bigvan/front/front-blue.png', 'bigvan/front/front-bone.png', 'bigvan/front/front-liver.png']
+                        'hood': ['bigvan/front/front-hoodblue.png', 'bigvan/front/front-hoodbone.png', 'bigvan/front/front-hoodliver.png'],
+                        'roof': ['bigvan/front/front-roofblue.png', 'bigvan/front/front-roofbone.png', 'bigvan/front/front-roofliver.png'],
+                        'sides': ['bigvan/front/front-sidesblue.png', 'bigvan/front/front-sidesbone.png', 'bigvan/front/front-sidesliver.png']
+                    },
+                    'left': {
+                        'base': 'bigvan/left/leftbase.jpg',
+                        'left': ['bigvan/left/left-blue.png', 'bigvan/left/left-bone.png', 'bigvan/left/left-liver.png']
+                    },
+                    'right': {
+                        'base': 'bigvan/right/rightbase.jpg',
+                        'right': ['bigvan/right/right-blue.png', 'bigvan/right/right-bone.png', 'bigvan/right/right-liver.png']
+                    },
+                    'top': {
+                        'base': 'bigvan/top/topbase.jpg',
+                        'hood': ['bigvan/top/top-hoodblue.png', 'bigvan/top/top-hoodbone.png', 'bigvan/top/top-hoodliver.png'],
+                        'roof': ['bigvan/top/top-roofblue.png', 'bigvan/top/top-roofbone.png', 'bigvan/top/top-roofliver.png'],
+                        'sides': ['bigvan/top/top-sidesblue.png', 'bigvan/top/top-sidesbone.png', 'bigvan/top/top-sidesliver.png']
+                    }
+                },
+                'features': {
+                    'front': ['#247BA0', '#E0DDCF', '#534B52'],
+                    'hood': ['#247BA0', '#E0DDCF', '#534B52'],
+                    'back': ['#247BA0', '#E0DDCF', '#534B52'],
+                    'sides': ['#247BA0', '#E0DDCF', '#534B52'],
+                    'roof': ['#247BA0', '#E0DDCF', '#534B52']
+                }
+            }
         }
     ]
 }
