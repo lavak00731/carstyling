@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CarInterface } from '../model/car-interface';
+import { CarserviceService } from '../services/carservice.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private _carService: CarserviceService) { }
+  cars: CarInterface[];
   ngOnInit(): void {
+    this._carService.getCars().subscribe(res => {
+      this.cars = res;
+      console.log(this.cars)
+    });
+    ;
   }
 
 }
