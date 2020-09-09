@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { CustomizeComponent } from './customize/customize.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { FinalComponent } from './final/final.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SelectionBasketService } from './services/selection-basket.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FinalComponent } from './final/final.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDatService, { dataEncapsulation: false }
-    )
+    ),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,18 @@
 <div class="container">
   <h1>Welcome To Car Styling Shop App</h1>
   <p>This is an app with the aim of styling your car</p>
-  <div class="cssa-cars-option-wrapper">
-    <div class="cssa-car-option card" *ngFor="let car of cars">
-      <img [src]=car?.cardata.picture [alt]=car?.cardata.Name>
+  <div class="cssa-cars-option-wrapper row">
+    <div class="cssa-car-option card col" *ngFor="let car of cars">
+      <img [src]=car?.cardata.picture class="card-img-top" [alt]=car?.cardata.Name>
       <div class="card-body">
         <h2 class="card-title">{{car?.cardata.Name}}</h2>
         <p>HP: {{car?.cardata.Horsepower}}</p>
-        <p>Weight: {{car?.cardata.Weight_in_lbs}}</p>
+        <p>Weight in lgs: {{car?.cardata.Weight_in_lbs}}</p>
         <p>Miles per galon: {{car?.cardata.Miles_per_Gallon}}</p>
-      </div>      
+      </div>
+      <div class="card-footer text-center">
+        <button type="button" class="btn btn-primary" >Select</button>
+      </div>
     </div>
   </div>
 </div>
