@@ -5,10 +5,10 @@ import { CarBluePrint } from '../services/car-blue-print';
   providedIn: 'root'
 })
 export class SelectionBasketService {
-
-  constructor(carSelection: CarBluePrint) { }
+  carBucket = CarBluePrint;
+  constructor() { }
   updateCarSelection(...prop) {
-    
+    console.log(prop)
   }
   
 }
