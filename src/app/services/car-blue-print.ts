@@ -1,6 +1,6 @@
 export class CarBluePrint {
-    return carChoosen = {
-        id: '',
+
+        id: '';
         cardata: {
           Name: '',
           Miles_per_Gallon: '',
@@ -11,14 +11,14 @@ export class CarBluePrint {
           Year: '',
           Origin: '',
           picture: ''
-        },
+        };
         selection: {
           hood: '',
           back: '',
           sides: '',
           roof: '',
-          front ? : ''
+          front: ''
         }
 
-      }
+
 }
