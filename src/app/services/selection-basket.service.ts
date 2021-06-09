@@ -8,7 +8,12 @@ export class SelectionBasketService {
   carBucket = CarBluePrint;
   constructor() { }
   updateCarSelection(...prop) {
-    console.log(prop)
+    
+    this.carBucket['id'] = prop[0];
+    console.log(prop);
+    console.log(this.carBucket);
+    
+
   }
   
 }
