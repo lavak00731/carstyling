@@ -10,7 +10,8 @@ export class SelectionBasketService {
   updateCarSelection(...prop) {
     this.carBucket['id'] = prop[0];
     this.carBucket['cardata'] = prop[1];
-    console.log(this.carBucket);
   }
-  
+  checkSelectedCar() {
+    return this.carBucket['cardata'] !== undefined;
+  }
 }

@@ -32,7 +32,7 @@ import { SelectionBasketService } from './services/selection-basket.service';
     ),
     NgbModule
   ],
-  providers: [],
+  providers: [SelectionBasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
