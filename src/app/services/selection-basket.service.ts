@@ -11,6 +11,9 @@ export class SelectionBasketService {
     this.carBucket['id'] = prop[0];
     this.carBucket['cardata'] = prop[1];
   }
+  getCarSelection() {
+    return this.carBucket['id'];
+  }
   checkSelectedCar() {
     return this.carBucket['cardata'] !== undefined;
   }

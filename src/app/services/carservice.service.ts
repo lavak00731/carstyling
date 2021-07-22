@@ -14,6 +14,7 @@ export class CarserviceService {
 
   cars$ = this.http.get<CarInterface[]>(this.carsUrl) 
     .pipe(
+      tap(data => console.log(data)),
       catchError(this.handleError)
     );
 
@@ -29,6 +30,7 @@ export class CarserviceService {
       // The response body may contain clues as to what went wrong,
       errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
     }
+  
     return throwError(errorMessage);
   }
 

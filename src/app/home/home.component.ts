@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CarInterface } from '../model/car-interface';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
-import {Router} from '@angular/router'; // import router from angular router
+import { Router } from '@angular/router'; // import router from angular router
 import { catchError } from 'rxjs/operators';
 import { EMPTY, Subject } from 'rxjs';
 
@@ -16,7 +15,6 @@ import { EMPTY, Subject } from 'rxjs';
 export class HomeComponent  {
 
   constructor( private _carService: CarserviceService, private _selectionBasket: SelectionBasketService, private route:Router) { }
-  cars: CarInterface[];
   private errorMessageSubject = new Subject<string>();
   errorMessage$ = this.errorMessageSubject.asObservable();
 

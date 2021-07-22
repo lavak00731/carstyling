@@ -13,7 +13,6 @@ export class CustomGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log(this._selection.checkSelectedCar())
     if(this._selection.checkSelectedCar()) {
       return true;
     } else {
