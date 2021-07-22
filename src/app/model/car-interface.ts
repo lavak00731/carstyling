@@ -11,35 +11,31 @@ export interface CarInterface {
     Origin: string,
     picture: string
   },
+  base: {
+    45: string,
+    back: string,
+    front: string,
+    left: string,
+    right: string,
+    top: string
+  },
   pictures: {
     45: {
-      base: string,
       hood: Array < string > ,
       roof: Array < string > ,
       sides: Array < string > ,
       front ? : Array < string >
     },
-    back: {
-      base: string,
-      back: Array < string >
-    },
+    back: Array < string >,
     front: {
-      base: string,
       hood: Array < string > ,
       roof: Array < string > ,
       sides: Array < string >
-        front ? : Array < string > ,
+      front ? : Array < string > ,
     },
-    left: {
-      base: string,
-      left: Array < string >
-    },
-    right: {
-      base: string,
-      right: Array < string >
-    },
+    left: Array < string >,
+    right: Array < string >,
     top: {
-      base: string,
       hood: Array < string > ,
       roof: Array < string > ,
       sides: Array < string >

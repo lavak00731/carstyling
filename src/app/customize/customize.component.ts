@@ -3,6 +3,8 @@ import { EMPTY, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-customize',
