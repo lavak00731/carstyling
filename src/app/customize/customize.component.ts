@@ -15,8 +15,9 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 export class CustomizeComponent implements OnInit {
   constructor(private _carService: CarserviceService, private _selection: SelectionBasketService) { }
   private errorMessageSubject = new Subject<string>();
-  private errorMessage$ = this.errorMessageSubject.asObservable();
+  errorMessage$ = this.errorMessageSubject.asObservable();
   elemSelected: object;
+  elemPictBased: object;
   cars$ =  this._carService.cars$
             .pipe(
               catchError( err =>{
@@ -24,18 +25,14 @@ export class CustomizeComponent implements OnInit {
                 return EMPTY;
               })
             );
-selectionOnService: number  = this._selection.getCarSelection();
-
-
-
-
-    
+selectionOnService: number  = this._selection.getCarSelection();    
   ngOnInit(): void {
    this.cars$.subscribe(elem => {
     for( let key in elem) {
       if(elem[key]['id'] === this.selectionOnService) {        
         this.elemSelected = elem[key];
-        console.log(this.elemSelected);
+        this.elemPictBased = this.elemSelected['base'];
+        console.log(this.elemPictBased);
       }
 
     }

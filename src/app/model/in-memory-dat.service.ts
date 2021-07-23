@@ -20,14 +20,14 @@ export class InMemoryDatService implements InMemoryDbService {
         "Origin": "USA",
         "picture": "assets/van/45/45base.jpg"
       },
-      "base": {
-        "45": "assets/van/45/45base.jpg",
-        "back": "assets/van/back/backbase.jpg",
-        "front": "assets/van/front/frontbase.jpg",
-        "left": "assets/van/left/leftbase.jpg",
-        "right": "assets/van/right/rightbase.jpg",
-        "top": "assets/van/top/topbase.jpg"
-      },
+      "base": [
+        {"url": "assets/van/45/45base.jpg", "description": "45 degrees picture"},
+        {"url": "assets/van/back/backbase.jpg", "description": "Back view"},
+        {"url": "assets/van/front/frontbase.jpg", "description": "Front view"},
+        {"url": "assets/van/left/leftbase.jpg", "description": "Left view"},
+        {"url": "assets/van/right/rightbase.jpg", "description": "Right view"},
+        {"url": "assets/van/top/topbase.jpg", "description": "Top View"}
+      ],
       "pictures": {
         "45": {
           "hood": ["assets/van/45/45-hoodblue.png", "assets/van/45/45-hoodbone.png", "assets/van/45/45-hoodliver.png"],
@@ -70,14 +70,14 @@ export class InMemoryDatService implements InMemoryDbService {
           "Origin": "USA",
           "picture": "assets/bigvan/45/base45.jpg"
         },
-      "base": {
-        "45": "assets/bigvan/45/45base.jpg",
-        "back": "assets/bigvan/back/backbase.jpg",
-        "front": "assets/bigvan/front/frontbase.jpg",
-        "left": "assets/bigvan/left/leftbase.jpg",
-        "right": "assets/bigvan/right/rightbase.jpg",
-        "top": "assets/bigvan/top/topbase.jpg" 
-      },
+      "base": [
+        {"url": "assets/bigvan/45/base45.jpg", "description": "45 degrees picture"},
+        {"url": "assets/bigvan/back/backbase.jpg", "description": "Back view"},
+        {"url": "assets/bigvan/front/frontbase.jpg", "description": "Front view"},
+        {"url": "assets/bigvan/left/leftbase.jpg", "description": "Left view"},
+        {"url": "assets/bigvan/right/rightbase.jpg", "description": "Right view"},
+        {"url": "assets/bigvan/top/topbase.jpg", "description": "Top view"}
+      ],
       "pictures": {
         "45": {
           "hood": ["assets/bigvan/45/hood-blue45.png", "assets/bigvan/45/hood-bone45.png", "assets/bigvan/45/hood-liver45.png"],

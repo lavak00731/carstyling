@@ -1,17 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg">
-            <!--<ngb-carousel *ngIf="images">
-                <ng-template ngbSlide>
+        <div class="col-lg">    
+          <ngb-carousel  *ngIf="cars$ | async  as cars">
+                <ng-template ngbSlide *ngFor="let elem of elemPictBased">
                   <div class="picsum-img-wrapper">
-                    <img [src]="images[0]" alt="Random first slide">
-                  </div>
-                  <div class="carousel-caption">
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                  </div>
-                </ng-template>
-            </ngb-carousel>-->
+                    <img class="img-fluid" [src]="elem.url" alt="elem.description">
+                  </div>                  
+                </ng-template>             
+          </ngb-carousel>
+          <div class="alert alert-danger" *ngIf="errorMessage$ | async as errorMessage">
+            {{ errorMessage }}
+          </div>
         </div>
         <div class="col-lg">
 

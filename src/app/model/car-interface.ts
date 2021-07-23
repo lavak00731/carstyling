@@ -11,14 +11,14 @@ export interface CarInterface {
     Origin: string,
     picture: string
   },
-  base: {
-    45: string,
-    back: string,
-    front: string,
-    left: string,
-    right: string,
-    top: string
-  },
+  base: [
+    {url: string, description: string},
+    {url: string, description: string},
+    {url: string, description: string},
+    {url: string, description: string},
+    {url: string, description: string},
+    {url: string, description: string}
+  ],
   pictures: {
     45: {
       hood: Array < string > ,
