@@ -41,11 +41,11 @@ export interface CarInterface {
       sides: Array < string >
     }
   },
-  features: {
-    hood: Array < string > ,
-    back: Array < string > ,
-    sides: Array < string > ,
-    roof: Array < string > ,
-    front ? : Array < string >
-  }
+  features: [
+    {option: string, colors: Array < string >, colorName: Array < string >},
+    {option: string, colors: Array < string >, colorName: Array < string >},
+    {option: string, colors: Array < string >, colorName: Array < string >},
+    {option: string, colors: Array < string >, colorName: Array < string >},
+    {option: string, colors: Array < string >, colorName: Array < string >}
+  ]
 }

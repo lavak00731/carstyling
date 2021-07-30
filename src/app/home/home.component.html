@@ -12,7 +12,7 @@
             <p>Miles per galon: {{car?.cardata.Miles_per_Gallon}}</p>
           </div>
           <div class="card-footer text-center">
-            <button type="button" class="btn btn-primary" (click)="carSelection(car.id, car.cardata)">Select</button>
+            <a class="btn btn-primary" [routerLink]="['/customize', car.id]" >Select</a>
           </div>
         </div>    
     </div>

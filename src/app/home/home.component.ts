@@ -28,9 +28,6 @@ export class HomeComponent  {
             )
        
   
-  private carSelection(carId: string, carCardata: string) {
-    this._selectionBasket.updateCarSelection(carId, carCardata);
-    this.route.navigate(['/customize']); // navigate to other page
-  }
+
 
 }

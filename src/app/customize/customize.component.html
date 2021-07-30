@@ -1,19 +1,40 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg">    
-          <ngb-carousel  *ngIf="cars$ | async  as cars">
-                <ng-template ngbSlide *ngFor="let elem of elemPictBased">
+      <h1 class="col" *ngIf="selectedCar">{{selectedCar['cardata']['Name']}}</h1> 
+    </div>
+    <div class="row flex-md-row-reverse">
+        <div class="col-md">    
+          <ngb-carousel [interval]="0" *ngIf="selectedCar">
+                <ng-template ngbSlide *ngFor="let elem of selectedCar.base">
                   <div class="picsum-img-wrapper">
                     <img class="img-fluid" [src]="elem.url" alt="elem.description">
                   </div>                  
                 </ng-template>             
           </ngb-carousel>
-          <div class="alert alert-danger" *ngIf="errorMessage$ | async as errorMessage">
-            {{ errorMessage }}
-          </div>
         </div>
-        <div class="col-lg">
+        <div class="col-md">
+          <form action="">
+            <!-- <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" *ngIf="cars$ | async  as cars">
+              <li [ngbNavItem]="opt" *ngFor="let opt of optionsToCustomised;  index as i">
+                <a ngbNavLink>{{opt.option}}</a>
+                <ng-template ngbNavContent>
+                  Hola
+                  <div class="color-wrapper" *ngFor="let color of opt.colors; index as ind">
+                    <input class="visually-hidden" type="radio" [name]="opt.option" [id]="opt.option+color">
+                    <label [for]="opt.option+color"><span class="visually-hidden">{{opt.colorName[ind]}}</span></label>
+                  </div>   
+                </ng-template>
+              </li>
+            </ul>
+
+            
+            <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
+            
+          </form>
 
         </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="errors">
+      <p>Please try again in a moment, an error has ocurred</p>
     </div>
 </div>

@@ -6,7 +6,7 @@ import { CustomGuardGuard } from './customize/custom-guard.guard';
 
 
 const routes: Routes = [
-  { path: 'customize', component: CustomizeComponent, canActivate: [CustomGuardGuard]},
+  { path: 'customize/:id', component: CustomizeComponent, canActivate: [CustomGuardGuard]},
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home'}

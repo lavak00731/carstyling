@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CarInterface } from './../model/car-interface';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { getCommentRange } from 'typescript';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,21 @@ export class CarserviceService {
   constructor(private http: HttpClient) { }
   private carsUrl = 'api/cars';  // URL to web api
 
-  cars$ = this.http.get<CarInterface[]>(this.carsUrl) 
+ cars$ = this.http.get<CarInterface[]>(this.carsUrl) 
     .pipe(
       tap(data => console.log(data)),
       catchError(this.handleError)
-    );
+    ); 
+  getCarSelected (id: number) {
+    const url = `${this.carsUrl}/${id}`;
+    return this.http.get<CarInterface[]>(url) 
+    .pipe(
+      tap(data => console.log(data)),
+      catchError(this.handleError)
+    ); 
+  }
+    
+
 
   private handleError(err: any) {
     // in a real world app, we may send the server to some remote logging infrastructure

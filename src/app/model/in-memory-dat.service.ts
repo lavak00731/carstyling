@@ -48,13 +48,13 @@ export class InMemoryDatService implements InMemoryDbService {
           "sides": ["assets/van/top/top-sidesblue.png", "assets/van/top/top-sidesbone.png", "assets/van/top/top-sidesliver.png"]
         }
       },
-      "features": {
-        "front": ["#247BA0", "#E0DDCF", "#534B52"],
-        "hood": ["#247BA0", "#E0DDCF", "#534B52"],
-        "back": ["#247BA0", "#E0DDCF", "#534B52"],
-        "sides": ["#247BA0", "#E0DDCF", "#534B52"],
-        "roof": ["#247BA0", "#E0DDCF", "#534B52"]
-      }
+      "features": [
+        {"option": "hood", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "back", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "sides", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "roof", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "front", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]}
+      ]
   
     },
     {
@@ -100,13 +100,13 @@ export class InMemoryDatService implements InMemoryDbService {
           "sides": ["assets/bigvan/top/top-sidesblue.png", "assets/bigvan/top/top-sidesbone.png", "assets/bigvan/top/top-sidesliver.png"]
         }
       },
-      "features": {
-        "hood": ["#247BA0", "#E0DDCF", "#534B52"],
-        "back": ["#247BA0", "#E0DDCF", "#534B52"],
-        "sides": ["#247BA0", "#E0DDCF", "#534B52"],
-        "roof": ["#247BA0", "#E0DDCF", "#534B52"],
-        "front": ["#247BA0", "#E0DDCF", "#534B52"]
-      }
+      "features": [
+        {"option": "hood", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "back", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "sides", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "roof", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]},
+        {"option": "front", "colors": ["#247BA0", "#E0DDCF", "#534B52"], "colorName": ["blue", "bone", "liver"]}
+      ]
       
     }];
     return {cars};
