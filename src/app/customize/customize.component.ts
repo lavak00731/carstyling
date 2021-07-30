@@ -30,7 +30,9 @@ export class CustomizeComponent implements OnInit, OnDestroy {
    }
    
 
-           
+   tabs = [1, 2, 3, 4, 5];
+  counter = this.tabs.length + 1;
+  active;        
    ngOnInit() {
 
     this._activeRoute.paramMap.subscribe(

@@ -19,33 +19,39 @@ export interface CarInterface {
     {url: string, description: string},
     {url: string, description: string}
   ],
-  pictures: {
-    45: {
-      hood: Array < string > ,
-      roof: Array < string > ,
-      sides: Array < string > ,
-      front ? : Array < string >
-    },
-    back: Array < string >,
-    front: {
-      hood: Array < string > ,
-      roof: Array < string > ,
-      sides: Array < string >
-      front ? : Array < string > ,
-    },
-    left: Array < string >,
-    right: Array < string >,
-    top: {
-      hood: Array < string > ,
-      roof: Array < string > ,
-      sides: Array < string >
-    }
-  },
+  pictures: [
+    [
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>}
+    ],
+    [
+      {name: string, part: string, colors: Array<object>}
+    ],
+    [
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>}
+    ],
+    [
+      {name: string, part: string, colors: Array<object>}
+    ],
+    [
+      {name: string, part: string, colors: Array<object>}
+    ],
+    [
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>},
+      {name: string, part: string, colors: Array<object>}
+    ]
+  ],
   features: [
-    {option: string, colors: Array < string >, colorName: Array < string >},
-    {option: string, colors: Array < string >, colorName: Array < string >},
-    {option: string, colors: Array < string >, colorName: Array < string >},
-    {option: string, colors: Array < string >, colorName: Array < string >},
-    {option: string, colors: Array < string >, colorName: Array < string >}
+    {option: string, colors: Array < object >},
+    {option: string, colors: Array < object >},
+    {option: string, colors: Array < object >},
+    {option: string, colors: Array < object >},
+    {option: string, colors: Array < object >}
   ]
 }
