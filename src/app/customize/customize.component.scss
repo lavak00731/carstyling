@@ -1,0 +1,42 @@
+#cust-form {
+    .option-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+    .color-wrapper {
+        width: 3.35rem;
+        margin-right: 0.625rem;
+    }
+    label {
+        border: 3px solid #00008A;
+        width: 3.125rem;
+        height: 3.125rem;
+        opacity: 0.8;
+    }
+    input[type="radio"] {
+        &:checked  {
+            & + label {
+                opacity: 1;
+                border-color: #000;
+                border-radius: 50%;
+
+            }
+        }
+        &:focus, &:focus-visible {
+            & + label {
+                opacity: 1;
+                border-color: #000;
+                border-radius: 50%;
+            }
+        }
+        &:focus:not(:focus-visible) {
+            & + label {
+                opacity: 0.8;
+                border: color;
+            }
+        }
+    } 
+}

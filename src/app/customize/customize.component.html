@@ -13,15 +13,17 @@
       </ngb-carousel>
     </div>
     <div class="col-md">
-      <form action="">
+      <form id="cust-form" action="">
         <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
           <li [ngbNavItem]="tab" *ngFor="let tab of selectedCar.features">
-            <a ngbNavLink>{{tab.option}}</a>
+            <a ngbNavLink>{{tab.option | titlecase }}</a>
             <ng-template ngbNavContent>
-              <div class="color-wrapper" *ngFor="let color of tab.colors; index as ind">
-                <input class="visually-hidden" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+color.colorName" [checked]="color.isDefault">
-                <label [for]="color.colorName+ind"><span class="visually-hidden">{{tab.option}}: {{color.colorName}}</span></label>
-              </div>
+              <div class="option-wrapper">
+                <div class="color-wrapper" *ngFor="let color of tab.colors; index as ind">
+                  <input class="sr-only" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+color.colorName" [checked]="color.isDefault">
+                  <label [for]="color.colorName+ind" [ngStyle]="{backgroundColor: color.color}"><span class="sr-only">{{tab.option}}: {{color.colorName}}</span></label>
+                </div>
+              </div>              
             </ng-template>
           </li>
         </ul>
