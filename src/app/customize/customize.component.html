@@ -3,16 +3,27 @@
     <h1 class="col" *ngIf="selectedCar">{{selectedCar['cardata']['Name']}}</h1>
   </div>
   <div class="row flex-md-row-reverse">
-    <div class="col-md">
+    <div class="col-md-8">
       <ngb-carousel [interval]="0" *ngIf="selectedCar">
         <ng-template ngbSlide *ngFor="let elem of selectedCar.base">
           <div class="picsum-img-wrapper">
-            <img class="img-fluid" [src]="elem.url" alt="elem.description">
+            <img class="img-fluid base" [src]="elem.url" alt="elem.description">
+            <!-- <div class="option-pic-wrapper" *ngFor="let part of selectedCar.pictures">
+              <div class="pic-wrapper" *ngFor="let view of part">
+                <div [ngSwitch]="view.name">
+                  <div class="view-wrapper" *ngSwitchCase="45">
+                    <figure *ngFor="let color of view">
+
+                    </figure>
+                  </div>                  
+                </div>
+              </div>
+            </div> -->
           </div>
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col-md">
+    <div class="col-md-4">
       <form id="cust-form" action="">
         <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
           <li [ngbNavItem]="tab" *ngFor="let tab of selectedCar.features">
@@ -22,8 +33,10 @@
                 <div class="color-wrapper" *ngFor="let color of tab.colors; index as ind">
                   <input class="sr-only" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+color.colorName" [checked]="color.isDefault">
                   <label [for]="color.colorName+ind" [ngStyle]="{backgroundColor: color.color}"><span class="sr-only">{{tab.option}}: {{color.colorName}}</span></label>
+                  <p class="price">{{color.price | currency}}</p>
                 </div>
-              </div>              
+                
+              </div>                          
             </ng-template>
           </li>
         </ul>

@@ -33,72 +33,228 @@ export class InMemoryDatService implements InMemoryDbService {
           {
             "name": "45",
             "part": "hood",
-            "colors": ["assets/van/45/45-hoodblue.png", "assets/van/45/45-hoodbone.png", "assets/van/45/45-hoodliver.png"]
+            "colors": [
+              { 
+                "color": "blue hood",
+                "url": "assets/van/45/45-hoodblue.png"
+              }, 
+              {
+                "color": "bone hood",
+                "url": "assets/van/45/45-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/van/45/45-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "45",
             "part": "roof",
-            "colors": ["assets/van/45/45-roofblue.png", "assets/van/45/45-roofbone.png", "assets/van/45/45-roofliver.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/van/45/45-roofblue.png"
+              },
+              {
+                "color": "bone roof",
+                "url": "assets/van/45/45-roofbone.png"
+              }, 
+              { 
+                "color": "liver roof",
+                "url": "assets/van/45/45-roofliver.png"
+              }
+            ]
           },
           {
             "name": "45",
             "part": "sides",
-            "colors": ["assets/van/45/45-sidesblue.png", "assets/van/45/45-sidesbone.png", "assets/van/45/45-liver.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/van/45/45-sidesblue.png"
+              },
+              {
+                "color": "bone sides", 
+                "url": "assets/van/45/45-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/van/45/45-liver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "back",
             "part": "back",
-            "colors": ["assets/van/back/backblue.png", "assets/van/back/backbone.png", "assets/van/back/backliver.png"]
+            "colors": [
+              {
+                "color": "blue back",
+                "url": "assets/van/back/backblue.png"
+              }, 
+              {
+                "color": "bone back",
+                "url": "assets/van/back/backbone.png"
+              }, 
+              {
+                "color": "liver back",
+                "url": "assets/van/back/backliver.png"
+              }
+            ]
           }  
         ],
         [
           {
             "name": "front",
             "part": "hood",
-            "colors": ["assets/van/front/front-hoodblue.png", "assets/van/front/front-hoodbone.png", "assets/van/front/front-hoodliver.png"]
+            "colors": [
+              {
+                "color": "blue hood",
+                "url": "assets/van/front/front-hoodblue.png" 
+              },
+              {
+                "color": "bone hood",
+                "url": "assets/van/front/front-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/van/front/front-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "front",
             "part": "roof",
-            "colors": ["assets/van/front/front-roofblue.png", "assets/van/front/front-roofbone.png", "assets/van/front/front-roofliver.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/van/front/front-roofblue.png"
+              }, 
+              {
+                "color": "bone roof",
+                "url": "assets/van/front/front-roofbone.png"
+              }, 
+              { 
+                "color": "liver roof",
+                "url": "assets/van/front/front-roofliver.png"
+              }
+            ]
           },
           {
             "name": "front",
             "part": "sides",
-            "colors": ["assets/van/front/front-sidesblue.png", "assets/van/front/front-sidesbone.png", "assets/van/front/front-sidesliver.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/van/front/front-sidesblue.png"
+              }, 
+              {
+                "color": "bone sides",
+                "url": "assets/van/front/front-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/van/front/front-sidesliver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "left",
             "part": "left",
-            "colors": ["assets/van/left/left-blue.png", "assets/van/left/left-bone.png", "assets/van/left/left-liver.png"]
+            "colors": [
+              {
+                "color": "blue left",
+                "url": "assets/van/left/left-blue.png"
+              }, 
+              {
+                "color": "bone left",
+                "url": "assets/van/left/left-bone.png"
+              }, 
+              {
+                "color": "liver left", 
+                "url": "assets/van/left/left-liver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "right",
             "part": "right",
-            "colors": ["assets/van/right/right-blue.png", "assets/van/right/right-bone.png", "assets/van/right/right-liver.png"]
+            "colors": [
+              {
+                "color": "blue right",
+                "url": "assets/van/right/right-blue.png"
+              }, 
+              {
+                "color": "bone right",
+                "url": "assets/van/right/right-bone.png"
+              }, 
+              {
+                "color": "liver right",
+                "url": "assets/van/right/right-liver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "top",
             "part": "hood",
-            "colors": ["assets/van/top/top-hoodblue.png", "assets/van/top/top-hoodbone.png", "assets/van/top/top-hoodliver.png"]
+            "colors": [
+              {
+                "color": "blue hood",
+                "url": "assets/van/top/top-hoodblue.png"
+              }, 
+              {
+                "color": "bone hood",
+                "url": "assets/van/top/top-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/van/top/top-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "top",
             "part": "roof",
-            "colors": ["assets/van/top/top-roofblue.png", "assets/van/top/top-roofbone.png", "assets/van/top/top-roofliver.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/van/top/top-roofblue.png"
+              }, 
+              {
+                "color": "bone roof",
+                "url": "assets/van/top/top-roofbone.png"
+              }, 
+              {
+                "color": "liver roof",
+                "url": "assets/van/top/top-roofliver.png"
+              }
+            ]
           },
           {
             "name": "top",
             "part": "sides",
-            "colors": ["assets/van/top/top-sidesblue.png", "assets/van/top/top-sidesbone.png", "assets/van/top/top-sidesliver.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/van/top/top-sidesblue.png"
+              }, 
+              {
+                "color": "bone sides",
+                "url": "assets/van/top/top-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/van/top/top-sidesliver.png"
+              }
+            ]
           }
         ]
       ],
@@ -106,46 +262,46 @@ export class InMemoryDatService implements InMemoryDbService {
         {
           "option": "front",
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "sides", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "hood", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "back", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },        
         {
           "option": "roof", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         }        
       ]  
@@ -176,82 +332,264 @@ export class InMemoryDatService implements InMemoryDbService {
           {
             "name": "45",
             "part": "hood",
-            "colors": ["assets/bigvan/45/hood-blue45.png", "assets/bigvan/45/hood-bone45.png", "assets/bigvan/45/hood-liver45.png"]
+            "colors": [
+              { 
+                "color": "blue hood",
+                "url": "assets/bigvan/45/hood-blue45.png"
+              }, 
+              {
+                "color": "bone hood",
+                "url": "assets/bigvan/45/45-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/bigvan/45/45-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "45",
             "part": "roof",
-            "colors": ["assets/bigvan/45/roof-blue45.png", "assets/bigvan/45/roof-bone45.png", "assets/bigvan/45/roof-liver45.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/bigvan/45/45-roofblue.png"
+              },
+              {
+                "color": "bone roof",
+                "url": "assets/bigvan/45/45-roofbone.png"
+              }, 
+              { 
+                "color": "liver roof",
+                "url": "assets/bigvan/45/45-roofliver.png"
+              }
+            ]
           },
           {
             "name": "45",
             "part": "sides",
-            "colors": ["assets/bigvan/45/side-blue45.png", "assets/bigvan/45/side-bone45.png", "assets/bigvan/45/side-liver45.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/bigvan/45/45-sidesblue.png"
+              },
+              {
+                "color": "bone sides", 
+                "url": "assets/bigvan/45/45-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/bigvan/45/45-liver.png"
+              }
+            ]
           },
           {
             "name": "45",
             "part": "front",
-            "colors": ["assets/bigvan/45/front-blue45.png", "assets/bigvan/45/front-bone45.png", "assets/bigvan/45/front-liver45.png"]
+            "colors": [
+              {
+                "color": "blue front",
+                "url": "assets/bigvan/45/front-blue45.png"
+              },
+              {
+                "color": "bone front", 
+                "url": "assets/bigvan/45/front-bone45.png"
+              }, 
+              {
+                "color": "liver front",
+                "url": "assets/bigvan/45/front-liver45.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "back",
             "part": "back",
-            "colors": ["assets/bigvan/back/backblue.png", "assets/bigvan/back/backbone.png", "assets/bigvan/back/backliver.png"]
-          }
+            "colors": [
+              {
+                "color": "blue back",
+                "url": "assets/bigvan/back/backblue.png"
+              }, 
+              {
+                "color": "bone back",
+                "url": "assets/bigvan/back/backbone.png"
+              }, 
+              {
+                "color": "liver back",
+                "url": "assets/bigvan/back/backliver.png"
+              }
+            ]
+          }  
         ],
         [
           {
             "name": "front",
             "part": "hood",
-            "colors": ["assets/bigvan/front/front-hoodblue.png", "assets/bigvan/front/front-hoodbone.png", "assets/bigvan/front/front-hoodliver.png"]
+            "colors": [
+              {
+                "color": "blue hood",
+                "url": "assets/bigvan/front/front-hoodblue.png" 
+              },
+              {
+                "color": "bone hood",
+                "url": "assets/bigvan/front/front-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/bigvan/front/front-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "front",
             "part": "roof",
-            "colors": ["assets/bigvan/front/front-roofblue.png", "assets/bigvan/front/front-roofbone.png", "assets/bigvan/front/front-roofliver.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/bigvan/front/front-roofblue.png"
+              }, 
+              {
+                "color": "bone roof",
+                "url": "assets/bigvan/front/front-roofbone.png"
+              }, 
+              { 
+                "color": "liver roof",
+                "url": "assets/bigvan/front/front-roofliver.png"
+              }
+            ]
           },
           {
             "name": "front",
             "part": "sides",
-            "colors": ["assets/bigvan/front/front-sidesblue.png", "assets/bigvan/front/front-sidesbone.png", "assets/bigvan/front/front-sidesliver.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/bigvan/front/front-sidesblue.png"
+              }, 
+              {
+                "color": "bone sides",
+                "url": "assets/bigvan/front/front-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/bigvan/front/front-sidesliver.png"
+              }
+            ]
           },
           {
             "name": "front",
             "part": "front",
-            "colors": ["assets/bigvan/front/front-blue.png", "assets/bigvan/front/front-bone.png", "assets/bigvan/front/front-liver.png"]
+            "colors": [
+              {
+                "color": "blue front",
+                "url": "assets/bigvan/front/front-blue.png"
+              }, 
+              {
+                "color": "bone front",
+                "url": "assets/bigvan/front/front-bone.png"
+              }, 
+              {
+                "color": "liver front",
+                "url": "assets/bigvan/front/front-sidesliver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "left",
             "part": "left",
-            "colors": ["assets/bigvan/left/left-blue.png", "assets/bigvan/left/left-bone.png", "assets/bigvan/left/left-liver.png"]
+            "colors": [
+              {
+                "color": "blue left",
+                "url": "assets/bigvan/left/left-blue.png"
+              }, 
+              {
+                "color": "bone left",
+                "url": "assets/bigvan/left/left-bone.png"
+              }, 
+              {
+                "color": "liver left", 
+                "url": "assets/bigvan/left/left-liver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "right",
             "part": "right",
-            "colors": ["assets/bigvan/right/right-blue.png", "assets/bigvan/right/right-bone.png", "assets/bigvan/right/right-liver.png"]
+            "colors": [
+              {
+                "color": "blue right",
+                "url": "assets/bigvan/right/right-blue.png"
+              }, 
+              {
+                "color": "bone right",
+                "url": "assets/bigvan/right/right-bone.png"
+              }, 
+              {
+                "color": "liver right",
+                "url": "assets/bigvan/right/right-liver.png"
+              }
+            ]
           }
         ],
         [
           {
             "name": "top",
             "part": "hood",
-            "colors": ["assets/bigvan/top/top-hoodblue.png", "assets/bigvan/top/top-hoodbone.png", "assets/bigvan/top/top-hoodliver.png"]
+            "colors": [
+              {
+                "color": "blue hood",
+                "url": "assets/bigvan/top/top-hoodblue.png"
+              }, 
+              {
+                "color": "bone hood",
+                "url": "assets/bigvan/top/top-hoodbone.png"
+              }, 
+              {
+                "color": "liver hood",
+                "url": "assets/bigvan/top/top-hoodliver.png"
+              }
+            ]
           },
           {
             "name": "top",
             "part": "roof",
-            "colors": ["assets/bigvan/top/top-roofblue.png", "assets/bigvan/top/top-roofbone.png", "assets/bigvan/top/top-roofliver.png"]
+            "colors": [
+              {
+                "color": "blue roof",
+                "url": "assets/bigvan/top/top-roofblue.png"
+              }, 
+              {
+                "color": "bone roof",
+                "url": "assets/bigvan/top/top-roofbone.png"
+              }, 
+              {
+                "color": "liver roof",
+                "url": "assets/bigvan/top/top-roofliver.png"
+              }
+            ]
           },
           {
             "name": "top",
             "part": "sides",
-            "colors": ["assets/bigvan/top/top-sidesblue.png", "assets/bigvan/top/top-sidesbone.png", "assets/bigvan/top/top-sidesliver.png"]
+            "colors": [
+              {
+                "color": "blue sides",
+                "url": "assets/bigvan/top/top-sidesblue.png"
+              }, 
+              {
+                "color": "bone sides",
+                "url": "assets/bigvan/top/top-sidesbone.png"
+              }, 
+              {
+                "color": "liver sides",
+                "url": "assets/bigvan/top/top-sidesliver.png"
+              }
+            ]
           }
         ]
       ],
@@ -259,46 +597,46 @@ export class InMemoryDatService implements InMemoryDbService {
         {
           "option": "front",
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "sides", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "hood", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
         {
           "option": "back", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },        
         {
           "option": "roof", 
           "colors": [
-            {"colorName": "white", "color": "#FFF", "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "isDefault": false}
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         }        
       ]      

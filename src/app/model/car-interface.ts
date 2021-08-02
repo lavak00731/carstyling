@@ -48,10 +48,10 @@ export interface CarInterface {
     ]
   ],
   features: [
-    {option: string, colors: Array < object >},
-    {option: string, colors: Array < object >},
-    {option: string, colors: Array < object >},
-    {option: string, colors: Array < object >},
-    {option: string, colors: Array < object >}
+    {option: string, colors: Array < object >, price: number, isDefault: boolean},
+    {option: string, colors: Array < object >, price: number, isDefault: boolean},
+    {option: string, colors: Array < object >, price: number, isDefault: boolean},
+    {option: string, colors: Array < object >, price: number, isDefault: boolean},
+    {option: string, colors: Array < object >, price: number, isDefault: boolean}
   ]
 }
