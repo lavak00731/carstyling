@@ -4,7 +4,7 @@
   </div>
   <div class="row flex-md-row-reverse">
     <div class="col-md-8">
-      <ngb-carousel [interval]="0" *ngIf="selectedCar">
+      <ngb-carousel [interval]="0" #carCarousel="ngbCarousel" *ngIf="selectedCar">
         <ng-template ngbSlide *ngFor="let elem of selectedCar.base; let i = index">
           <div class="picsum-img-wrapper">
             <img class="img-fluid base" [src]="elem.url" alt="elem.description">            
@@ -19,8 +19,8 @@
     </div>
     <div class="col-md-4">
       <form id="cust-form" action="">
-        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-          <li [ngbNavItem]="tab" *ngFor="let tab of selectedCar.features">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs">
+          <li [ngbNavItem]="tab.option" *ngFor="let tab of selectedCar.features">
             <a ngbNavLink>{{tab.option | titlecase }}</a>
             <ng-template ngbNavContent>
               <div class="option-wrapper">
@@ -28,13 +28,12 @@
                   <input class="sr-only" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+color.colorName" [checked]="color.isDefault">
                   <label [for]="color.colorName+ind" [ngStyle]="{backgroundColor: color.color}"><span class="sr-only">{{tab.option}}: {{color.colorName}}</span></label>
                   <p class="price">{{color.price | currency}}</p>
-                </div>
-                
+                </div>                
               </div>                          
             </ng-template>
           </li>
+          
         </ul>
-
 
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
 

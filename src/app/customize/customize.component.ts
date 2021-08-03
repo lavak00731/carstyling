@@ -1,10 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { EMPTY, Observable, Subject } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
-import { CarInterface } from './../model/car-interface';
+import { NgbCarousel, NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,7 +17,9 @@ export class CustomizeComponent implements OnInit, OnDestroy {
   errors: any;
   selectedId: number;
   selectedCar: any;
-
+  active;
+  @ViewChild('carCarousel') carCarousel: NgbCarousel;
+  //get selected car info
   getCar(id: number) {
     this._carService.getCarSelected(id).subscribe(
       car => this.selectedCar = car,
@@ -28,11 +28,25 @@ export class CustomizeComponent implements OnInit, OnDestroy {
       }
     );
    }
-   
+  //get Nav change
+  onNavChange(changeEvent: NgbNavChangeEvent) {
 
-   tabs = [1, 2, 3, 4, 5];
-  counter = this.tabs.length + 1;
-  active;        
+    switch (changeEvent.nextId) {
+      case 'front':
+      case 'sides':
+      case 'hood':
+        this.carCarousel.select('ngb-slide-0');
+        break;
+      case 'back':
+        this.carCarousel.select('ngb-slide-1');
+        break;
+      case 'roof':
+        this.carCarousel.select('ngb-slide-5');
+        break;
+      default:
+        console.log(`Error`);
+    }
+  }
    ngOnInit() {
 
     this._activeRoute.paramMap.subscribe(
