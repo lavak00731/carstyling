@@ -30,7 +30,6 @@ export class CustomizeComponent implements OnInit, OnDestroy {
    }
   //get Nav change
   onNavChange(changeEvent: NgbNavChangeEvent) {
-
     switch (changeEvent.nextId) {
       case 'front':
       case 'sides':
@@ -46,6 +45,10 @@ export class CustomizeComponent implements OnInit, OnDestroy {
       default:
         console.log(`Error`);
     }
+  }
+  //get option
+  selectOption(event: any ) {
+    console.log(event.target.value);
   }
    ngOnInit() {
 

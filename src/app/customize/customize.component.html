@@ -25,7 +25,7 @@
             <ng-template ngbNavContent>
               <div class="option-wrapper">
                 <div class="color-wrapper" *ngFor="let color of tab.colors; index as ind">
-                  <input class="sr-only" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+color.colorName" [checked]="color.isDefault">
+                  <input class="sr-only" type="radio" [name]="tab.option" [id]="color.colorName+ind" [value]="tab.option+' '+color.colorName" [checked]="color.isDefault" (change)="selectOption($event)">
                   <label [for]="color.colorName+ind" [ngStyle]="{backgroundColor: color.color}"><span class="sr-only">{{tab.option}}: {{color.colorName}}</span></label>
                   <p class="price">{{color.price | currency}}</p>
                 </div>                
