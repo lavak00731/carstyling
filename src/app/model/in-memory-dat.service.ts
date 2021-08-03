@@ -80,7 +80,7 @@ export class InMemoryDatService implements InMemoryDbService {
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/van/45/45-liver.png"
+                "url": "assets/van/45/45-sidesliver.png"
               }
             ]
           }
@@ -339,11 +339,11 @@ export class InMemoryDatService implements InMemoryDbService {
               }, 
               {
                 "color": "bone hood",
-                "url": "assets/bigvan/45/45-hoodbone.png"
+                "url": "assets/bigvan/45/hood-bone45.png"
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/bigvan/45/45-hoodliver.png"
+                "url": "assets/bigvan/45/hood-liver45.png"
               }
             ]
           },
@@ -353,15 +353,15 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/bigvan/45/45-roofblue.png"
+                "url": "assets/bigvan/45/roof-blue45.png"
               },
               {
                 "color": "bone roof",
-                "url": "assets/bigvan/45/45-roofbone.png"
+                "url": "assets/bigvan/45/roof-bone45.png"
               }, 
               { 
                 "color": "liver roof",
-                "url": "assets/bigvan/45/45-roofliver.png"
+                "url": "assets/bigvan/45/roof-liver45.png"
               }
             ]
           },
@@ -371,15 +371,15 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/bigvan/45/45-sidesblue.png"
+                "url": "assets/bigvan/45/side-blue45.png"
               },
               {
                 "color": "bone sides", 
-                "url": "assets/bigvan/45/45-sidesbone.png"
+                "url": "assets/bigvan/45/side-bone45.png"
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/bigvan/45/45-liver.png"
+                "url": "assets/bigvan/45/side-liver45.png"
               }
             ]
           },

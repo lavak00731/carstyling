@@ -5,20 +5,14 @@
   <div class="row flex-md-row-reverse">
     <div class="col-md-8">
       <ngb-carousel [interval]="0" *ngIf="selectedCar">
-        <ng-template ngbSlide *ngFor="let elem of selectedCar.base">
+        <ng-template ngbSlide *ngFor="let elem of selectedCar.base; let i = index">
           <div class="picsum-img-wrapper">
-            <img class="img-fluid base" [src]="elem.url" alt="elem.description">
-            <!-- <div class="option-pic-wrapper" *ngFor="let part of selectedCar.pictures">
-              <div class="pic-wrapper" *ngFor="let view of part">
-                <div [ngSwitch]="view.name">
-                  <div class="view-wrapper" *ngSwitchCase="45">
-                    <figure *ngFor="let color of view">
-
-                    </figure>
-                  </div>                  
-                </div>
+            <img class="img-fluid base" [src]="elem.url" alt="elem.description">            
+              <div class="pic-wrapper" *ngFor="let view of selectedCar.pictures[i]">
+                <figure *ngFor="let color of view.colors">
+                  <img class="img-fluid" [src]="color.url" [alt]="color.color">
+                </figure>
               </div>
-            </div> -->
           </div>
         </ng-template>
       </ngb-carousel>
