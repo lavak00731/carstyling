@@ -36,15 +36,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               { 
                 "color": "blue hood",
-                "url": "assets/van/45/45-hoodblue.png"
+                "url": "assets/van/45/45-hoodblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone hood",
-                "url": "assets/van/45/45-hoodbone.png"
+                "url": "assets/van/45/45-hoodbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/van/45/45-hoodliver.png"
+                "url": "assets/van/45/45-hoodliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -54,15 +57,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/van/45/45-roofblue.png"
+                "url": "assets/van/45/45-roofblue.png",
+                "isSelected": false
               },
               {
                 "color": "bone roof",
-                "url": "assets/van/45/45-roofbone.png"
+                "url": "assets/van/45/45-roofbone.png",
+                "isSelected": false
               }, 
               { 
                 "color": "liver roof",
-                "url": "assets/van/45/45-roofliver.png"
+                "url": "assets/van/45/45-roofliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -72,15 +78,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/van/45/45-sidesblue.png"
+                "url": "assets/van/45/45-sidesblue.png",
+                "isSelected": false
               },
               {
                 "color": "bone sides", 
-                "url": "assets/van/45/45-sidesbone.png"
+                "url": "assets/van/45/45-sidesbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/van/45/45-sidesliver.png"
+                "url": "assets/van/45/45-sidesliver.png",
+                "isSelected": false
               }
             ]
           }
@@ -92,15 +101,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue back",
-                "url": "assets/van/back/backblue.png"
+                "url": "assets/van/back/backblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone back",
-                "url": "assets/van/back/backbone.png"
+                "url": "assets/van/back/backbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver back",
-                "url": "assets/van/back/backliver.png"
+                "url": "assets/van/back/backliver.png",
+                "isSelected": false
               }
             ]
           }  
@@ -112,15 +124,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue hood",
-                "url": "assets/van/front/front-hoodblue.png" 
+                "url": "assets/van/front/front-hoodblue.png",
+                "isSelected": false 
               },
               {
                 "color": "bone hood",
-                "url": "assets/van/front/front-hoodbone.png"
+                "url": "assets/van/front/front-hoodbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/van/front/front-hoodliver.png"
+                "url": "assets/van/front/front-hoodliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -130,15 +145,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/van/front/front-roofblue.png"
+                "url": "assets/van/front/front-roofblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone roof",
-                "url": "assets/van/front/front-roofbone.png"
+                "url": "assets/van/front/front-roofbone.png",
+                "isSelected": false
               }, 
               { 
                 "color": "liver roof",
-                "url": "assets/van/front/front-roofliver.png"
+                "url": "assets/van/front/front-roofliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -148,15 +166,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/van/front/front-sidesblue.png"
+                "url": "assets/van/front/front-sidesblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone sides",
-                "url": "assets/van/front/front-sidesbone.png"
+                "url": "assets/van/front/front-sidesbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/van/front/front-sidesliver.png"
+                "url": "assets/van/front/front-sidesliver.png",
+                "isSelected": false
               }
             ]
           }
@@ -168,15 +189,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue left",
-                "url": "assets/van/left/left-blue.png"
+                "url": "assets/van/left/left-blue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone left",
-                "url": "assets/van/left/left-bone.png"
+                "url": "assets/van/left/left-bone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver left", 
-                "url": "assets/van/left/left-liver.png"
+                "url": "assets/van/left/left-liver.png",
+                "isSelected": false
               }
             ]
           }
@@ -188,15 +212,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue right",
-                "url": "assets/van/right/right-blue.png"
+                "url": "assets/van/right/right-blue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone right",
-                "url": "assets/van/right/right-bone.png"
+                "url": "assets/van/right/right-bone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver right",
-                "url": "assets/van/right/right-liver.png"
+                "url": "assets/van/right/right-liver.png",
+                "isSelected": false
               }
             ]
           }
@@ -208,15 +235,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue hood",
-                "url": "assets/van/top/top-hoodblue.png"
+                "url": "assets/van/top/top-hoodblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone hood",
-                "url": "assets/van/top/top-hoodbone.png"
+                "url": "assets/van/top/top-hoodbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/van/top/top-hoodliver.png"
+                "url": "assets/van/top/top-hoodliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -226,15 +256,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/van/top/top-roofblue.png"
+                "url": "assets/van/top/top-roofblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone roof",
-                "url": "assets/van/top/top-roofbone.png"
+                "url": "assets/van/top/top-roofbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver roof",
-                "url": "assets/van/top/top-roofliver.png"
+                "url": "assets/van/top/top-roofliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -244,15 +277,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/van/top/top-sidesblue.png"
+                "url": "assets/van/top/top-sidesblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone sides",
-                "url": "assets/van/top/top-sidesbone.png"
+                "url": "assets/van/top/top-sidesbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/van/top/top-sidesliver.png"
+                "url": "assets/van/top/top-sidesliver.png",
+                "isSelected": false
               }
             ]
           }
@@ -335,15 +371,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               { 
                 "color": "blue hood",
-                "url": "assets/bigvan/45/hood-blue45.png"
+                "url": "assets/bigvan/45/hood-blue45.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone hood",
-                "url": "assets/bigvan/45/hood-bone45.png"
+                "url": "assets/bigvan/45/hood-bone45.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/bigvan/45/hood-liver45.png"
+                "url": "assets/bigvan/45/hood-liver45.png",
+                "isSelected": false
               }
             ]
           },
@@ -353,15 +392,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/bigvan/45/roof-blue45.png"
+                "url": "assets/bigvan/45/roof-blue45.png",
+                "isSelected": false
               },
               {
                 "color": "bone roof",
-                "url": "assets/bigvan/45/roof-bone45.png"
+                "url": "assets/bigvan/45/roof-bone45.png",
+                "isSelected": false
               }, 
               { 
                 "color": "liver roof",
-                "url": "assets/bigvan/45/roof-liver45.png"
+                "url": "assets/bigvan/45/roof-liver45.png",
+                "isSelected": false
               }
             ]
           },
@@ -371,15 +413,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/bigvan/45/side-blue45.png"
+                "url": "assets/bigvan/45/side-blue45.png",
+                "isSelected": false
               },
               {
                 "color": "bone sides", 
-                "url": "assets/bigvan/45/side-bone45.png"
+                "url": "assets/bigvan/45/side-bone45.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/bigvan/45/side-liver45.png"
+                "url": "assets/bigvan/45/side-liver45.png",
+                "isSelected": false
               }
             ]
           },
@@ -389,15 +434,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue front",
-                "url": "assets/bigvan/45/front-blue45.png"
+                "url": "assets/bigvan/45/front-blue45.png",
+                "isSelected": false
               },
               {
                 "color": "bone front", 
-                "url": "assets/bigvan/45/front-bone45.png"
+                "url": "assets/bigvan/45/front-bone45.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver front",
-                "url": "assets/bigvan/45/front-liver45.png"
+                "url": "assets/bigvan/45/front-liver45.png",
+                "isSelected": false
               }
             ]
           }
@@ -409,15 +457,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue back",
-                "url": "assets/bigvan/back/backblue.png"
+                "url": "assets/bigvan/back/backblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone back",
-                "url": "assets/bigvan/back/backbone.png"
+                "url": "assets/bigvan/back/backbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver back",
-                "url": "assets/bigvan/back/backliver.png"
+                "url": "assets/bigvan/back/backliver.png",
+                "isSelected": false
               }
             ]
           }  
@@ -429,15 +480,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue hood",
-                "url": "assets/bigvan/front/front-hoodblue.png" 
+                "url": "assets/bigvan/front/front-hoodblue.png",
+                "isSelected": false 
               },
               {
                 "color": "bone hood",
-                "url": "assets/bigvan/front/front-hoodbone.png"
+                "url": "assets/bigvan/front/front-hoodbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/bigvan/front/front-hoodliver.png"
+                "url": "assets/bigvan/front/front-hoodliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -447,15 +501,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/bigvan/front/front-roofblue.png"
+                "url": "assets/bigvan/front/front-roofblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone roof",
-                "url": "assets/bigvan/front/front-roofbone.png"
+                "url": "assets/bigvan/front/front-roofbone.png",
+                "isSelected": false
               }, 
               { 
                 "color": "liver roof",
-                "url": "assets/bigvan/front/front-roofliver.png"
+                "url": "assets/bigvan/front/front-roofliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -465,15 +522,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/bigvan/front/front-sidesblue.png"
+                "url": "assets/bigvan/front/front-sidesblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone sides",
-                "url": "assets/bigvan/front/front-sidesbone.png"
+                "url": "assets/bigvan/front/front-sidesbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/bigvan/front/front-sidesliver.png"
+                "url": "assets/bigvan/front/front-sidesliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -483,15 +543,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue front",
-                "url": "assets/bigvan/front/front-blue.png"
+                "url": "assets/bigvan/front/front-blue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone front",
-                "url": "assets/bigvan/front/front-bone.png"
+                "url": "assets/bigvan/front/front-bone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver front",
-                "url": "assets/bigvan/front/front-sidesliver.png"
+                "url": "assets/bigvan/front/front-sidesliver.png",
+                "isSelected": false
               }
             ]
           }
@@ -503,15 +566,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue left",
-                "url": "assets/bigvan/left/left-blue.png"
+                "url": "assets/bigvan/left/left-blue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone left",
-                "url": "assets/bigvan/left/left-bone.png"
+                "url": "assets/bigvan/left/left-bone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver left", 
-                "url": "assets/bigvan/left/left-liver.png"
+                "url": "assets/bigvan/left/left-liver.png",
+                "isSelected": false
               }
             ]
           }
@@ -523,15 +589,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue right",
-                "url": "assets/bigvan/right/right-blue.png"
+                "url": "assets/bigvan/right/right-blue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone right",
-                "url": "assets/bigvan/right/right-bone.png"
+                "url": "assets/bigvan/right/right-bone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver right",
-                "url": "assets/bigvan/right/right-liver.png"
+                "url": "assets/bigvan/right/right-liver.png",
+                "isSelected": false
               }
             ]
           }
@@ -543,15 +612,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue hood",
-                "url": "assets/bigvan/top/top-hoodblue.png"
+                "url": "assets/bigvan/top/top-hoodblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone hood",
-                "url": "assets/bigvan/top/top-hoodbone.png"
+                "url": "assets/bigvan/top/top-hoodbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver hood",
-                "url": "assets/bigvan/top/top-hoodliver.png"
+                "url": "assets/bigvan/top/top-hoodliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -561,15 +633,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue roof",
-                "url": "assets/bigvan/top/top-roofblue.png"
+                "url": "assets/bigvan/top/top-roofblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone roof",
-                "url": "assets/bigvan/top/top-roofbone.png"
+                "url": "assets/bigvan/top/top-roofbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver roof",
-                "url": "assets/bigvan/top/top-roofliver.png"
+                "url": "assets/bigvan/top/top-roofliver.png",
+                "isSelected": false
               }
             ]
           },
@@ -579,15 +654,18 @@ export class InMemoryDatService implements InMemoryDbService {
             "colors": [
               {
                 "color": "blue sides",
-                "url": "assets/bigvan/top/top-sidesblue.png"
+                "url": "assets/bigvan/top/top-sidesblue.png",
+                "isSelected": false
               }, 
               {
                 "color": "bone sides",
-                "url": "assets/bigvan/top/top-sidesbone.png"
+                "url": "assets/bigvan/top/top-sidesbone.png",
+                "isSelected": false
               }, 
               {
                 "color": "liver sides",
-                "url": "assets/bigvan/top/top-sidesliver.png"
+                "url": "assets/bigvan/top/top-sidesliver.png",
+                "isSelected": false
               }
             ]
           }
