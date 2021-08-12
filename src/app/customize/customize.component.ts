@@ -52,8 +52,33 @@ export class CustomizeComponent implements OnInit {
   }
   //get option
   selectOption(event: any ) {
-    console.log(event.target.value);
-    console.log(this.selectedCar);
+    let custValue: Array<string> = event.target.value.split(" ");
+    console.log(event.target.value)
+    //setting color for picture
+    for( const side of this.selectedCar.pictures) {
+      for( const part of side) {
+        if(part.part === custValue[0]) {
+          for(const color of part.colors) {
+            color.isSelected = false;
+            if(custValue[1] !== 'white' && color.color === custValue[1]+' '+custValue[0]) {
+              color.isSelected = true;
+            }
+          }        
+        }
+      }      
+    }
+    //setting color selected
+    for( const part of this.selectedCar.features) {
+      if( part.option === custValue[0] ) {
+        for( const color of part.colors) {
+          color.isDefault = false;
+          if(custValue[1] !== 'white' && color.colorName === custValue[1] ) {
+            color.isDefault = true;
+          }
+        }
+      }
+
+    }
   }
    ngOnInit() {
 
