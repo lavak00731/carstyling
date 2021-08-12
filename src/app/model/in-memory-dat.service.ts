@@ -185,20 +185,20 @@ export class InMemoryDatService implements InMemoryDbService {
         [
           {
             "name": "left",
-            "part": "left",
+            "part": "sides",
             "colors": [
               {
-                "color": "blue left",
+                "color": "blue sides",
                 "url": "assets/van/left/left-blue.png",
                 "isSelected": false
               }, 
               {
-                "color": "bone left",
+                "color": "bone sides",
                 "url": "assets/van/left/left-bone.png",
                 "isSelected": false
               }, 
               {
-                "color": "liver left", 
+                "color": "liver sides", 
                 "url": "assets/van/left/left-liver.png",
                 "isSelected": false
               }
@@ -208,20 +208,20 @@ export class InMemoryDatService implements InMemoryDbService {
         [
           {
             "name": "right",
-            "part": "right",
+            "part": "sides",
             "colors": [
               {
-                "color": "blue right",
+                "color": "blue sides",
                 "url": "assets/van/right/right-blue.png",
                 "isSelected": false
               }, 
               {
-                "color": "bone right",
+                "color": "bone sides",
                 "url": "assets/van/right/right-bone.png",
                 "isSelected": false
               }, 
               {
-                "color": "liver right",
+                "color": "liver sides",
                 "url": "assets/van/right/right-liver.png",
                 "isSelected": false
               }
@@ -562,20 +562,20 @@ export class InMemoryDatService implements InMemoryDbService {
         [
           {
             "name": "left",
-            "part": "left",
+            "part": "sides",
             "colors": [
               {
-                "color": "blue left",
+                "color": "blue sides",
                 "url": "assets/bigvan/left/left-blue.png",
                 "isSelected": false
               }, 
               {
-                "color": "bone left",
+                "color": "bone sides",
                 "url": "assets/bigvan/left/left-bone.png",
                 "isSelected": false
               }, 
               {
-                "color": "liver left", 
+                "color": "liver sides", 
                 "url": "assets/bigvan/left/left-liver.png",
                 "isSelected": false
               }
@@ -585,20 +585,20 @@ export class InMemoryDatService implements InMemoryDbService {
         [
           {
             "name": "right",
-            "part": "right",
+            "part": "sides",
             "colors": [
               {
-                "color": "blue right",
+                "color": "blue sides",
                 "url": "assets/bigvan/right/right-blue.png",
                 "isSelected": false
               }, 
               {
-                "color": "bone right",
+                "color": "bone sides",
                 "url": "assets/bigvan/right/right-bone.png",
                 "isSelected": false
               }, 
               {
-                "color": "liver right",
+                "color": "liver sides",
                 "url": "assets/bigvan/right/right-liver.png",
                 "isSelected": false
               }
