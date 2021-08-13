@@ -296,7 +296,7 @@ export class InMemoryDatService implements InMemoryDbService {
       ],
       "features": [
         {
-          "option": "front",
+          "option": "hood", 
           "colors": [
             {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
             {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
@@ -306,15 +306,6 @@ export class InMemoryDatService implements InMemoryDbService {
         },
         {
           "option": "sides", 
-          "colors": [
-            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
-          ]
-        },
-        {
-          "option": "hood", 
           "colors": [
             {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
             {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
@@ -682,15 +673,6 @@ export class InMemoryDatService implements InMemoryDbService {
           ]
         },
         {
-          "option": "sides", 
-          "colors": [
-            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
-            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
-            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
-            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
-          ]
-        },
-        {
           "option": "hood", 
           "colors": [
             {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
@@ -699,6 +681,15 @@ export class InMemoryDatService implements InMemoryDbService {
             {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
           ]
         },
+        {
+          "option": "sides", 
+          "colors": [
+            {"colorName": "white", "color": "#FFF", "price": 0, "isDefault": true },
+            {"colorName": "blue", "color": "#247BA0", "price": 15, "isDefault": false},
+            {"colorName": "bone", "color": "#E0DDCF", "price": 20, "isDefault": false},
+            {"colorName": "liver", "color": "#534B52", "price": 25, "isDefault": false}
+          ]
+        },       
         {
           "option": "back", 
           "colors": [
