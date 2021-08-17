@@ -17,6 +17,7 @@ export class CustomizeComponent implements OnInit {
   selectedId: number;
   selectedCar: any;
   active;
+  priceSum: number = 0;
 
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
    
@@ -50,10 +51,21 @@ export class CustomizeComponent implements OnInit {
         console.log(`Error`);
     }
   }
+  //update price
+  updatePrice(features: any) {
+    this.priceSum = 0;
+    for (const feature of features) {
+      for (const color of feature.colors) {
+        if(color.isDefault) {
+          this.priceSum += color.price;
+        }
+      }
+     }
+  }
+
   //get option
   selectOption(event: any ) {
     let custValue: Array<string> = event.target.value.split(" ");
-    console.log(event.target.value)
     //setting color for picture
     for( const side of this.selectedCar.pictures) {
       for( const part of side) {
@@ -72,13 +84,13 @@ export class CustomizeComponent implements OnInit {
       if( part.option === custValue[0] ) {
         for( const color of part.colors) {
           color.isDefault = false;
-          if(custValue[1] !== 'white' && color.colorName === custValue[1] ) {
+          if(color.colorName === custValue[1] ) {
             color.isDefault = true;
           }
         }
       }
-
     }
+    this.updatePrice(this.selectedCar.features);
   }
    ngOnInit() {
 

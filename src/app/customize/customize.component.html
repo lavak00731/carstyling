@@ -31,14 +31,15 @@
                 </div>                
               </div>                          
             </ng-template>
-          </li>
-          
+          </li>          
         </ul>
-
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
       </form>
-
+      <div class="price-wrapper">
+        <h2>Price Of Painting</h2>
+        <p>{{ priceSum | currency }}</p>
+      </div>
+      <div class="modal-wrapper"></div>
     </div>
   </div>
   <div class="alert alert-danger" *ngIf="errors">
