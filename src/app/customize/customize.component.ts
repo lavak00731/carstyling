@@ -1,7 +1,7 @@
 import { Component,OnInit, ViewChild } from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
-import { NgbCarousel, NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbNavChangeEvent, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CustomizeComponent implements OnInit {
 
-  constructor(private _carService: CarserviceService, private _selection: SelectionBasketService, private _activeRoute: ActivatedRoute) { }
+  constructor(private _carService: CarserviceService, private _selection: SelectionBasketService, 
+    private _activeRoute: ActivatedRoute, private _modal: NgbModal) { }
  
   errors: any;
   selectedId: number;
@@ -92,6 +93,11 @@ export class CustomizeComponent implements OnInit {
     }
     this.updatePrice(this.selectedCar.features);
   }
+  //open modal
+  open(content) {
+    this._modal.open(content,  { centered: true });
+  }
+
    ngOnInit() {
 
     this._activeRoute.paramMap.subscribe(

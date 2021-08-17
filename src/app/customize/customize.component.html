@@ -39,7 +39,30 @@
         <h2>Price Of Painting</h2>
         <p>{{ priceSum | currency }}</p>
       </div>
-      <div class="modal-wrapper"></div>
+      <div class="modal-trigger-wrapper">
+        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">See technical data</button>
+      </div>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h2 class="modal-title" id="modal-basic-title">{{selectedCar.cardata.Name}}</h2>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Features</h3>
+          <p><strong>Miles per Galon:</strong> {{selectedCar.cardata.Miles_per_Gallon}}</p>
+          <p><strong>Cylinders:</strong> {{selectedCar.cardata.Cylinders}}</p>
+          <p><strong>HP:</strong> {{selectedCar.cardata.Horsepower}}</p>
+          <p><strong>Weight:</strong> {{selectedCar.cardata.Weight_in_lbs}} lbs</p>
+          <p><strong>Acceleration:</strong> {{selectedCar.cardata.Acceleration}} seconds</p>
+          <p><strong>Year:</strong> {{selectedCar.cardata.Year}}</p>
+          <p><strong>Origin:</strong> {{selectedCar.cardata.Origin}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Close</button>
+        </div>
+      </ng-template>
     </div>
   </div>
   <div class="alert alert-danger" *ngIf="errors">
