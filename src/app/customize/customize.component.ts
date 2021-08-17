@@ -2,7 +2,7 @@ import { Component,OnInit, ViewChild } from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel, NgbNavChangeEvent, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customize',
@@ -12,13 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class CustomizeComponent implements OnInit {
 
   constructor(private _carService: CarserviceService, private _selection: SelectionBasketService, 
-    private _activeRoute: ActivatedRoute, private _modal: NgbModal) { }
+    private _activeRoute: ActivatedRoute, private _modal: NgbModal, private _router: Router) { }
  
   errors: any;
   selectedId: number;
   selectedCar: any;
   active;
   priceSum: number = 0;
+  selectionColor: Object = {};
+  
 
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
    
@@ -63,7 +65,15 @@ export class CustomizeComponent implements OnInit {
       }
      }
   }
-
+  //optional parameters in url setting
+  setUrlSelection(obj: Object) {
+    this.selectedId = +this._activeRoute.snapshot.paramMap.get('id');
+    this._router.navigate(['/customize/'+this.selectedId, obj])
+  }
+  //read option parameters in url
+  readUrl() {
+    console.log(this._activeRoute.snapshot.paramMap.get('id'))
+  }
   //get option
   selectOption(event: any ) {
     let custValue: Array<string> = event.target.value.split(" ");
@@ -87,8 +97,15 @@ export class CustomizeComponent implements OnInit {
           color.isDefault = false;
           if(color.colorName === custValue[1] ) {
             color.isDefault = true;
+            //url with color
+            if(color.colorName === 'white') {
+              delete this.selectionColor[part.option];
+            } else {
+              this.selectionColor[part.option] = color.colorName;
+            }
+            this.setUrlSelection(this.selectionColor);
           }
-        }
+        }        
       }
     }
     this.updatePrice(this.selectedCar.features);
@@ -99,14 +116,12 @@ export class CustomizeComponent implements OnInit {
   }
 
    ngOnInit() {
-
     this._activeRoute.paramMap.subscribe(
       params => {
         this.selectedId = +params.get('id');
       }
     );
-     this.getCar(this.selectedId); 
-
-
+    this.getCar(this.selectedId); 
+    this.readUrl();
   } 
 }
