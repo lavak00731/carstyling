@@ -1,8 +1,9 @@
-import { Component,OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel, NgbNavChangeEvent, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-customize',
@@ -12,7 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CustomizeComponent implements OnInit {
 
   constructor(private _carService: CarserviceService, private _selection: SelectionBasketService, 
-    private _activeRoute: ActivatedRoute, private _modal: NgbModal, private _router: Router) { }
+    private _activeRoute: ActivatedRoute, private _modal: NgbModal, private _router: Router, 
+    private _location: Location) { }
  
   errors: any;
   selectedId: number;
@@ -20,6 +22,7 @@ export class CustomizeComponent implements OnInit {
   active;
   priceSum: number = 0;
   selectionColor: Object = {};
+  urlToShare: string;
   
 
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
@@ -112,6 +115,10 @@ export class CustomizeComponent implements OnInit {
       }
     }    
   }
+  //update url
+  updateUrl() {
+    this.urlToShare = encodeURIComponent(this._location['_platformLocation']['location']);
+  }
   //read option parameters in url
   readUrl() {
     this._activeRoute.params.subscribe(params => {
@@ -120,8 +127,10 @@ export class CustomizeComponent implements OnInit {
         this.setColorInPicture([param, params[param]]);
         //set color in input
         this.setColorOpted([param, params[param]], false);
+        //update price
         this.updatePrice(this.selectedCar.features);
       }
+      this.updateUrl();
     });
 
   }
@@ -131,8 +140,9 @@ export class CustomizeComponent implements OnInit {
     this.setColorInPicture(event.target.value.split(" "));
     //set color in input
     this.setColorOpted(event.target.value.split(" "), true);
-    
+    //updates price
     this.updatePrice(this.selectedCar.features);
+    this.updateUrl();
   }
   //open modal
   open(content) {
