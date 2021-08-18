@@ -30,6 +30,7 @@ export class CustomizeComponent implements OnInit {
     this._carService.getCarSelected(id).subscribe(
       car => {
         this.selectedCar = car;
+        this.readUrl();
       },
       error => {
         this.errors = error;
@@ -70,13 +71,8 @@ export class CustomizeComponent implements OnInit {
     this.selectedId = +this._activeRoute.snapshot.paramMap.get('id');
     this._router.navigate(['/customize/'+this.selectedId, obj])
   }
-  //read option parameters in url
-  readUrl() {
-    console.log(this._activeRoute.snapshot.paramMap.get('id'))
-  }
-  //get option
-  selectOption(event: any ) {
-    let custValue: Array<string> = event.target.value.split(" ");
+  //set color in Picture
+  setColorInPicture(custValue: Array<string>) {
     //setting color for picture
     for( const side of this.selectedCar.pictures) {
       for( const part of side) {
@@ -90,24 +86,51 @@ export class CustomizeComponent implements OnInit {
         }
       }      
     }
-    //setting color selected
-    for( const part of this.selectedCar.features) {
-      if( part.option === custValue[0] ) {
-        for( const color of part.colors) {
-          color.isDefault = false;
-          if(color.colorName === custValue[1] ) {
-            color.isDefault = true;
-            //url with color
-            if(color.colorName === 'white') {
-              delete this.selectionColor[part.option];
-            } else {
-              this.selectionColor[part.option] = color.colorName;
+  }
+  //setColor Opted
+  setColorOpted (custValue: Array<string>, isSetByUser: boolean) {
+    if(custValue[1] !== 'id' ) {
+      //setting color selected
+      for( const part of this.selectedCar.features) {
+        if( part.option === custValue[0] ) {
+          for( const color of part.colors) {
+            color.isDefault = false;
+            if(color.colorName === custValue[1] ) {
+              color.isDefault = true;
+              //url with color
+              if(color.colorName === 'white') {
+                delete this.selectionColor[part.option];
+              } else {
+                this.selectionColor[part.option] = color.colorName;
+              }
+              if(isSetByUser) {
+                this.setUrlSelection(this.selectionColor);
+              }            
             }
-            this.setUrlSelection(this.selectionColor);
-          }
-        }        
+          }        
+        }
       }
-    }
+    }    
+  }
+  //read option parameters in url
+  readUrl() {
+    this._activeRoute.params.subscribe(params => {
+      for (const param in params ) {
+        //set color in picture
+        this.setColorInPicture([param, params[param]]);
+        //set color in input
+        this.setColorOpted([param, params[param]], false);
+      }
+    });
+
+  }
+  //get option
+  selectOption(event: any ) {
+    //set color in picture
+    this.setColorInPicture(event.target.value.split(" "));
+    //set color in input
+    this.setColorOpted(event.target.value.split(" "), true);
+    
     this.updatePrice(this.selectedCar.features);
   }
   //open modal
@@ -122,6 +145,5 @@ export class CustomizeComponent implements OnInit {
       }
     );
     this.getCar(this.selectedId); 
-    this.readUrl();
   } 
 }
