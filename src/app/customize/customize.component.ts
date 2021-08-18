@@ -120,6 +120,7 @@ export class CustomizeComponent implements OnInit {
         this.setColorInPicture([param, params[param]]);
         //set color in input
         this.setColorOpted([param, params[param]], false);
+        this.updatePrice(this.selectedCar.features);
       }
     });
 
