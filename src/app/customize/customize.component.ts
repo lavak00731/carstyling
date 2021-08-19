@@ -148,8 +148,12 @@ export class CustomizeComponent implements OnInit {
   open(content) {
     this._modal.open(content,  { centered: true });
   }
-
-   ngOnInit() {
+  //Save Styled Car
+  saveSelection(car) {
+    this._selection.updateCarSelection(car);
+    this._router.navigate(['/confirm']);
+  }
+  ngOnInit() {
     this._activeRoute.paramMap.subscribe(
       params => {
         this.selectedId = +params.get('id');

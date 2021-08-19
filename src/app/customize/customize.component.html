@@ -101,11 +101,14 @@
             </div>
           </div>
         </a>
-
-
       </div>
-      <div class="modal-trigger-wrapper">
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">See technical data</button>
+      <div class="modal-trigger-wrapper row">
+        <div class="col my-3">
+          <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Technical data</button>
+        </div>
+        <div class="col my-3">
+          <button class="btn btn-lg btn-primary" (click)="saveSelection(selectedCar)">Buy Service</button>
+        </div>
       </div>
       <ng-template #content let-modal>
         <div class="modal-header">

@@ -6,15 +6,19 @@ import { CarBluePrint } from '../services/car-blue-print';
 })
 export class SelectionBasketService {
   carBucket = CarBluePrint;
+  selection: Object = {};
   constructor() { }
-  updateCarSelection(...prop) {
-    this.carBucket['id'] = prop[0];
-    this.carBucket['cardata'] = prop[1];
+  updateCarSelection(car: Object) {
+    this.carBucket['id'] = car['id'];
+    this.carBucket['cardata'] = car['cardata'];
+    for (const feature of car['features']) {
+      for (const color of feature.colors) {
+        if(color.isDefault) {
+          this.selection[feature.option] = color.colorName;
+        }
+      }
+    }
+    this.carBucket['selection'] = this.selection;
   }
-  getCarSelection() {
-    return this.carBucket['id'];
-  }
-  checkSelectedCar() {
-    return this.carBucket['cardata'] !== undefined;
-  }
+  
 }
