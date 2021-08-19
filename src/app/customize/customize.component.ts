@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel, NgbNavChangeEvent, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   templateUrl: './customize.component.html',
   styleUrls: ['./customize.component.scss']
 })
-export class CustomizeComponent implements OnInit {
+export class CustomizeComponent implements OnInit, OnDestroy {
 
   constructor(private _carService: CarserviceService, private _selection: SelectionBasketService, 
     private _activeRoute: ActivatedRoute, private _modal: NgbModal, private _router: Router, 
@@ -23,6 +23,7 @@ export class CustomizeComponent implements OnInit {
   priceSum: number = 0;
   selectionColor: Object = {};
   urlToShare: string;
+  service: any;
   
 
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
@@ -30,7 +31,7 @@ export class CustomizeComponent implements OnInit {
 
   //get selected car info
   getCar(id: number) {
-    this._carService.getCarSelected(id).subscribe(
+    this.service = this._carService.getCarSelected(id).subscribe(
       car => {
         this.selectedCar = car;
         this.readUrl();
@@ -160,5 +161,10 @@ export class CustomizeComponent implements OnInit {
       }
     );
     this.getCar(this.selectedId); 
-  } 
+  }
+
+  ngOnDestroy() {
+    this.service.unsubscribe();
+  }
+
 }
