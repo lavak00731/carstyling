@@ -1,11 +1,27 @@
 <div class="container">
-    <div class="row flex-md-row-reverse">
-        <div class="col">
-            <h1>Confirm your order</h1>
-        </div>
+  <div class="row flex-md-row-reverse">
+    <div class="col">
+      <h1>Confirm your order</h1>
     </div>
-    <div class="row">        
-        <div class="col"></div>
-        <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ngb-carousel [interval]="0" #carCarousel="ngbCarousel" *ngIf="selectedCar">
+        <ng-template ngbSlide *ngFor="let elem of selectedCar.base; let i = index">
+          <div class="picsum-img-wrapper">
+            <img class="img-fluid base" [src]="elem.url" alt="elem.description">
+            <div class="pic-wrapper" *ngFor="let view of selectedCar.pictures[i]">
+              <figure *ngFor="let color of view.colors; let ind = index">
+                <img *ngIf="color.isSelected" class="img-fluid" [src]="color.url" [alt]="color.color">
+              </figure>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
+    <div class="col"></div>
+  </div>
+  <div class="alert alert-danger" *ngIf="errors">
+    <p>Please try again in a moment, an error has ocurred</p>
+  </div>
 </div>

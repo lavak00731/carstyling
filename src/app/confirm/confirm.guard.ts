@@ -11,7 +11,6 @@ export class ConfirmGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log(this._selection.getSelection()['selection'])
       if(this._selection.getSelection()['selection']) {
         return true;
       } else {
