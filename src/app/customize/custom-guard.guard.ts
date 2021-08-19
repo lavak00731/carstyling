@@ -12,8 +12,7 @@ import { CarserviceService } from '../services/carservice.service';
 })
 export class CustomGuardGuard implements CanActivate {
 
-  constructor( private _router: Router, private _carService: CarserviceService) {}
-  carSelected: any;
+  constructor( private _router: Router) {}
     
   canActivate(
     route: ActivatedRouteSnapshot,

@@ -5,8 +5,8 @@ import { CarBluePrint } from '../services/car-blue-print';
   providedIn: 'root'
 })
 export class SelectionBasketService {
-  carBucket = CarBluePrint;
-  selection: Object = {};
+  private carBucket = CarBluePrint;
+  private selection: Object = {};
   constructor() { }
   updateCarSelection(car: Object) {
     this.carBucket['id'] = car['id'];
@@ -20,5 +20,7 @@ export class SelectionBasketService {
     }
     this.carBucket['selection'] = this.selection;
   }
-  
+  getSelection() {
+    return this.carBucket;
+  }
 }
