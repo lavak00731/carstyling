@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-confirm',
   templateUrl: './confirm.component.html',
@@ -9,7 +10,8 @@ import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ConfirmComponent implements OnInit, OnDestroy {
 
-  constructor(private _carService: CarserviceService, private _selection: SelectionBasketService) { }
+  constructor(private _carService: CarserviceService, private _selection: SelectionBasketService,
+  private  _location: Location) { }
   selectedCar: object = {};
   service: any;
   errors: any;
@@ -42,8 +44,11 @@ export class ConfirmComponent implements OnInit, OnDestroy {
       }
     );
    }
+   goingBack() {
+    this._location.back();
+  } 
   ngOnInit(): void {
-    this.getCar(+this._selection.getSelection()['id']);
+    this.getCar(+this._selection.getSelection()['id']);    
   }
 
   ngOnDestroy(): void {

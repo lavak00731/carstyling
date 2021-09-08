@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <h1 class="col" *ngIf="selectedCar">{{selectedCar['cardata']['Name']}}</h1>
+    <p class="col-12"><a [routerLink]="['/home']" class="btn btn-primary">Back to Models</a></p>
   </div>
   <div class="row flex-md-row-reverse">
     <div class="col-md-8">
