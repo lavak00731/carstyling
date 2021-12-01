@@ -23,83 +23,98 @@
       </ngb-carousel>
     </div>
     <div class="col">
-      <form action="">
-        <div class="mb3">
-          <label for="name">Name</label>
-          <input 
-          id="name"
-          [formControl]="name"
-          type="text"
-          placeholder="Your Name">
+      <form [formGroup]="clientProfile" action="">
+        <div class="alert alert-danger" *ngIf="errors">
+          <p>Please try again in a moment, an error has ocurred</p>
         </div>
-        <div class="mb3">
-          <label for="lastname">Lastname</label>
-          <input 
-          id="lastname"
-          [formControl]="lastname"
-          type="text"
-          placeholder="Your Lastname">
-        </div>
-        <div class="mb3">
-          <label for="address">Address</label>
-          <input 
-          id="address"
-          [formControl]="address"
-          type="text">
-        </div>
-        <div class="mb3">
-          <label for="address">Phone</label>
-          <input 
-          id="phone"
-          [formControl]="phone"
-          type="tel">
-        </div>
-        <div class="mb3">
-          <label for="address">Email</label>
-          <input 
-          id="email"
-          [formControl]="email"
-          type="email">
-        </div>
-        <div class="mb3">
-          <label for="address">Credit Card</label>
-          <input 
-          id="ccard"
-          [formControl]="ccard"
-          type="text">
-        </div>
-        <div class="mb3">
-          <label for="cardholdername">Card Holder Name</label>
-          <input 
-          id="cardholdername"
-          [formControl]="cardholdername"
-          type="text"
-          aria-describedby="cardholdernamehelp">
-          <p id="cardholdernamehelp">Name as appear on the credit card</p>
-        </div>
-        <div class="mb3 row">
-         <div class="col">
-          <label for="expDate">Card Expiration Date</label>
-          <input 
-          id="expDate"
-          [formControl]="expDate"
-          type="text">          
-         </div>
-         <div class="col">
-          <label for="expDate">Security Number</label>
-          <input 
-          id="secNumber"
-          [formControl]="secNumber"
-          type="text">
-         </div> 
-        </div>
-        <div class="mb3"></div>
-        <div class="mb3"></div>
-        <div class="mb3"></div>
+        <fieldset formGroupName="personalData">
+          <legend>Personal Data</legend>
+          <div class="mb-3">
+            <label class="form-label"  for="firstname">Name</label>
+            <input 
+            id="firstname"
+            class="form-control"
+            formControlName="firstname"
+            type="text"
+            placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="lastname">Lastname</label>
+            <input 
+            id="lastname"
+            class="form-control"
+            formControlName="lastname"
+            type="text"
+            placeholder="Your Lastname">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="address">Address</label>
+            <input
+            class="form-control" 
+            id="address"
+            class="form-control"
+            formControlName="address"
+            type="text">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="phone">Phone</label>
+            <input
+            class="form-control" 
+            id="phone"
+            formControlName="phone"
+            type="tel">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="email">Email</label>
+            <input
+            class="form-control" 
+            id="email"
+            formControlName="email"
+            type="email">
+          </div>
+        </fieldset>
+        <fieldset formGroupName="paymentMethod">
+          <legend>Payment Method</legend>
+          <div class="mb-3">
+            <label class="form-label"  for="ccard">Credit Card</label>
+            <input 
+            class="form-control"
+            id="ccard"
+            formControlName="ccard"
+            type="text">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="cardholdername">Card Holder Name</label>
+            <input
+            class="form-control" 
+            id="cardholdername"
+            formControlName="cardholdername"
+            type="text"
+            aria-describedby="cardholdernamehelp">
+            <p id="cardholdernamehelp" class="form-text">Name as appear on the credit card</p>
+          </div>
+          <div class="mb-3 row">
+           <div class="col">
+            <label class="form-label"  for="expDate">Card Expiration Date</label>
+            <input
+            class="form-control" 
+            id="expDate"
+            formControlName="expDate"
+            type="text">          
+           </div>
+           <div class="col">
+            <label class="form-label"  for="expDate">Security Number</label>
+            <input 
+            class="form-control"
+            id="secNumber"
+            formControlName="secNumber"
+            type="text">
+           </div> 
+          </div>
+        </fieldset> 
+        <div class="mb-5"><button class="btn btn-primary" type="submit">Submit</button></div>
       </form>
     </div>
   </div>
-  <div class="alert alert-danger" *ngIf="errors">
-    <p>Please try again in a moment, an error has ocurred</p>
-  </div>
+
 </div>

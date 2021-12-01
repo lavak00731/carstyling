@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
@@ -56,5 +56,19 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.service.unsubscribe();
   }
-
+  clientProfile = new FormGroup({
+    personalData: new FormGroup({
+      firstname: new FormControl(''),
+      lastname: new FormControl(''),
+      address: new FormControl(''),
+      phone: new FormControl(''),
+      email: new FormControl('')
+    }),
+    paymentMethod: new FormGroup({
+      ccard: new FormControl(''),
+      cardholdername: new FormControl(''),
+      expDate: new FormControl(''),
+      secNumber: new FormControl('')
+    })
+  })
 }
