@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
+import { FormControl } from '@angular/forms';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
-import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-confirm',
   templateUrl: './confirm.component.html',

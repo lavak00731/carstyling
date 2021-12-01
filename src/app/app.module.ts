@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ReactiveFormsModule } from '@angular/forms';
 import { InMemoryDatService } from './model/in-memory-dat.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,8 @@ import { SelectionBasketService } from './services/selection-basket.service';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDatService, { dataEncapsulation: false }
     ),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [SelectionBasketService],
   bootstrap: [AppComponent]

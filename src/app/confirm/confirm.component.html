@@ -22,7 +22,82 @@
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col"></div>
+    <div class="col">
+      <form action="">
+        <div class="mb3">
+          <label for="name">Name</label>
+          <input 
+          id="name"
+          [formControl]="name"
+          type="text"
+          placeholder="Your Name">
+        </div>
+        <div class="mb3">
+          <label for="lastname">Lastname</label>
+          <input 
+          id="lastname"
+          [formControl]="lastname"
+          type="text"
+          placeholder="Your Lastname">
+        </div>
+        <div class="mb3">
+          <label for="address">Address</label>
+          <input 
+          id="address"
+          [formControl]="address"
+          type="text">
+        </div>
+        <div class="mb3">
+          <label for="address">Phone</label>
+          <input 
+          id="phone"
+          [formControl]="phone"
+          type="tel">
+        </div>
+        <div class="mb3">
+          <label for="address">Email</label>
+          <input 
+          id="email"
+          [formControl]="email"
+          type="email">
+        </div>
+        <div class="mb3">
+          <label for="address">Credit Card</label>
+          <input 
+          id="ccard"
+          [formControl]="ccard"
+          type="text">
+        </div>
+        <div class="mb3">
+          <label for="cardholdername">Card Holder Name</label>
+          <input 
+          id="cardholdername"
+          [formControl]="cardholdername"
+          type="text"
+          aria-describedby="cardholdernamehelp">
+          <p id="cardholdernamehelp">Name as appear on the credit card</p>
+        </div>
+        <div class="mb3 row">
+         <div class="col">
+          <label for="expDate">Card Expiration Date</label>
+          <input 
+          id="expDate"
+          [formControl]="expDate"
+          type="text">          
+         </div>
+         <div class="col">
+          <label for="expDate">Security Number</label>
+          <input 
+          id="secNumber"
+          [formControl]="secNumber"
+          type="text">
+         </div> 
+        </div>
+        <div class="mb3"></div>
+        <div class="mb3"></div>
+        <div class="mb3"></div>
+      </form>
+    </div>
   </div>
   <div class="alert alert-danger" *ngIf="errors">
     <p>Please try again in a moment, an error has ocurred</p>
