@@ -62,7 +62,9 @@
             class="form-control" 
             id="phone"
             formControlName="phone"
-            type="tel">
+            type="tel"
+            [inputMask]="phoneMask"
+            placeholder="_(__)___-____">
           </div>
           <div class="mb-3">
             <label class="form-label"  for="email">Email</label>
@@ -81,7 +83,9 @@
             class="form-control"
             id="ccard"
             formControlName="ccard"
-            type="text">
+            type="text"
+            [inputMask]="creditCardMask"
+            placeholder="____ ____ ____ ____">
           </div>
           <div class="mb-3">
             <label class="form-label"  for="cardholdername">Card Holder Name</label>
@@ -100,7 +104,8 @@
             class="form-control" 
             id="expDate"
             formControlName="expDate"
-            type="text">          
+            type="text"
+            [inputMask]="dateObjforCC ">          
            </div>
            <div class="col">
             <label class="form-label"  for="expDate">Security Number</label>

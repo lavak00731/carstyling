@@ -13,6 +13,7 @@ import { CustomizeComponent } from './customize/customize.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SelectionBasketService } from './services/selection-basket.service';
+import { InputMaskModule } from '@ngneat/input-mask';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SelectionBasketService } from './services/selection-basket.service';
       InMemoryDatService, { dataEncapsulation: false }
     ),
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputMaskModule
   ],
   providers: [SelectionBasketService],
   bootstrap: [AppComponent]

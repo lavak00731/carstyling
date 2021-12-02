@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+import { createMask } from '@ngneat/input-mask';
 
 @Component({
   selector: 'app-confirm',
@@ -17,6 +18,18 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   selectedCar: object = {};
   service: any;
   errors: any;
+  dateObjforCC = createMask<Date>({
+    alias: 'datetime',
+    inputFormat: 'mm/yyyy',
+    parser: (value: string) => {
+      const values = value.split('/');
+      const year = +values[2];
+      const month = +values[1] - 1;
+      return new Date(year, month);
+    },
+  });
+  phoneMask = createMask('9-(999)-999-9999');
+  creditCardMask = createMask('9999 9999 9999 9999');
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
   //update object
   updateObject(selection: object) {
@@ -50,12 +63,14 @@ export class ConfirmComponent implements OnInit, OnDestroy {
     this._location.back();
   } 
   ngOnInit(): void {
-    this.getCar(+this._selection.getSelection()['id']);    
+    this.getCar(+this._selection.getSelection()['id']); 
   }
 
   ngOnDestroy(): void {
     this.service.unsubscribe();
   }
+  
+  //user form data
   clientProfile = new FormGroup({
     personalData: new FormGroup({
       firstname: new FormControl(''),
