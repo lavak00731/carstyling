@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
@@ -30,6 +30,8 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   });
   phoneMask = createMask('9-(999)-999-9999');
   creditCardMask = createMask('9999 9999 9999 9999');
+  
+
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
   //update object
   updateObject(selection: object) {
@@ -63,27 +65,41 @@ export class ConfirmComponent implements OnInit, OnDestroy {
     this._location.back();
   } 
   ngOnInit(): void {
-    this.getCar(+this._selection.getSelection()['id']); 
+    this.getCar(+this._selection.getSelection()['id']);
+    
   }
 
   ngOnDestroy(): void {
     this.service.unsubscribe();
   }
+  creditValidation(): ValidatorFn {
+    return (control:AbstractControl) : ValidationErrors | null => {
+      const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+      const mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
+      const amexpRegEx = /^(?:3[47][0-9]{13})$/;
+      const discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
+      let isValid = false;
+      if (visaRegEx.test(control.value) || mastercardRegEx.test(control.value) || amexpRegEx.test(control.value) || discovRegEx.test(control.value)) {
+        isValid = true;
+      }      
+      return isValid ? {creditCardValid: true} : null;        
+    }
+  }
   
   //user form data
   clientProfile = new FormGroup({
     personalData: new FormGroup({
-      firstname: new FormControl(''),
-      lastname: new FormControl(''),
-      address: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl('')
+      firstname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      address: new FormControl('', Validators.required),
+      phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      email: new FormControl('', [Validators.required, Validators.email])
     }),
     paymentMethod: new FormGroup({
-      ccard: new FormControl(''),
-      cardholdername: new FormControl(''),
-      expDate: new FormControl(''),
-      secNumber: new FormControl('')
+      ccard: new FormControl('', [Validators.required, Validators.minLength(3), this.creditValidation]),
+      cardholdername: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      expDate: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      secNumber: new FormControl('', [Validators.required, Validators.minLength(3)])
     })
   })
 }
