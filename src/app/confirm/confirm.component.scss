@@ -6,3 +6,10 @@
         left: 0;
     }
 }
+.form-control.ng-invalid.ng-touched{
+    border-color: red;
+}
+p.error {
+    color: red;
+    text-shadow: 1px 1px 1px black;
+}

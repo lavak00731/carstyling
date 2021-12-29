@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { Location } from '@angular/common';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { CarserviceService } from '../services/carservice.service';
 import { SelectionBasketService } from '../services/selection-basket.service';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { createMask } from '@ngneat/input-mask';
+
 
 @Component({
   selector: 'app-confirm',
@@ -18,6 +19,7 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   selectedCar: object = {};
   service: any;
   errors: any;
+  formValidity: boolean = false;
   dateObjforCC = createMask<Date>({
     alias: 'datetime',
     inputFormat: 'mm/yyyy',
@@ -33,6 +35,7 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   
 
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
+  @ViewChild('errorBanner') errorBanner: ElementRef;
   //update object
   updateObject(selection: object) {
     for (const arrayOfPictures of this.selectedCar['pictures']) {
@@ -79,9 +82,11 @@ export class ConfirmComponent implements OnInit, OnDestroy {
       const amexpRegEx = /^(?:3[47][0-9]{13})$/;
       const discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
       let isValid = false;
-      if (visaRegEx.test(control.value) || mastercardRegEx.test(control.value) || amexpRegEx.test(control.value) || discovRegEx.test(control.value)) {
+      let valueFormated = control.value.replace(/\s+/g, '');
+      if (visaRegEx.test(valueFormated) || mastercardRegEx.test(valueFormated) || amexpRegEx.test(valueFormated) || discovRegEx.test(valueFormated)) {
         isValid = true;
-      }      
+      } 
+
       return isValid ? {creditCardValid: true} : null;        
     }
   }
@@ -96,10 +101,34 @@ export class ConfirmComponent implements OnInit, OnDestroy {
       email: new FormControl('', [Validators.required, Validators.email])
     }),
     paymentMethod: new FormGroup({
-      ccard: new FormControl('', [Validators.required, Validators.minLength(3), this.creditValidation]),
+      ccard: new FormControl('', [Validators.required, Validators.minLength(3),  this.creditValidation()]),
       cardholdername: new FormControl('', [Validators.required, Validators.minLength(2)]),
       expDate: new FormControl('', [Validators.required, Validators.minLength(3)]),
       secNumber: new FormControl('', [Validators.required, Validators.minLength(3)])
     })
   })
+  validateForm() {
+    if(this.clientProfile.valid) {
+      this.formValidity = false;
+    } else {
+      this.formValidity = true;
+      //focus on error banner
+
+      setTimeout(() => {
+        this.errorBanner.nativeElement.focus()
+      })
+
+      for (const key in this.clientProfile.controls) {
+        //console.log(this.clientProfile.controls[key]['controls'])
+        for ( const innerProp in this.clientProfile.controls[key]['controls']) {
+          this.clientProfile.controls[key]['controls'][innerProp].markAsTouched();
+        }
+      }
+    }
+  }
+  sendingForm(){
+    this.validateForm();    
+  }
 }
+
+

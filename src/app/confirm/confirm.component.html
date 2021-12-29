@@ -23,9 +23,9 @@
       </ngb-carousel>
     </div>
     <div class="col">
-      <form [formGroup]="clientProfile" action="">
-        <div class="alert alert-danger" *ngIf="errors">
-          <p>Please try again in a moment, an error has ocurred</p>
+      <form [formGroup]="clientProfile" (ngSubmit)="sendingForm()" action="">
+        <div class="alert alert-danger" #errorBanner *ngIf="formValidity" tabIndex="-1">
+          <p>Please correct fields with errors</p>
         </div>
         <fieldset formGroupName="personalData">
           <legend>Personal Data</legend>
@@ -36,7 +36,11 @@
             class="form-control"
             formControlName="firstname"
             type="text"
-            placeholder="Your Name">
+            placeholder="Your Name"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.firstname').hasError('required')  && this.clientProfile.get('personalData.firstname').touched">
+              <p class="error">This field is required</p>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label"  for="lastname">Lastname</label>
@@ -45,16 +49,23 @@
             class="form-control"
             formControlName="lastname"
             type="text"
-            placeholder="Your Lastname">
+            placeholder="Your Lastname"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.lastname').hasError('required')  && this.clientProfile.get('personalData.lastname').touched">
+              <p class="error">This field is required</p>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label"  for="address">Address</label>
             <input
             class="form-control" 
             id="address"
-            class="form-control"
             formControlName="address"
-            type="text">
+            type="text"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.address').hasError('required')  && this.clientProfile.get('personalData.address').touched">
+              <p class="error">This field is required</p>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label"  for="phone">Phone</label>
@@ -64,7 +75,11 @@
             formControlName="phone"
             type="tel"
             [inputMask]="phoneMask"
-            placeholder="_(__)___-____">
+            placeholder="_(__)___-____"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.phone').hasError('required')  && this.clientProfile.get('personalData.phone').touched">
+              <p class="error">This field is required</p>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label"  for="email">Email</label>
@@ -72,7 +87,14 @@
             class="form-control" 
             id="email"
             formControlName="email"
-            type="email">
+            type="email"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.email').hasError('required')  && this.clientProfile.get('personalData.email').touched">
+              <p class="error">This field is required</p>
+            </div>
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.email').hasError('email')  && (this.clientProfile.get('personalData.email').touched && this.clientProfile.get('personalData.email').dirty)">
+              <p class="error">This field must be a valid email address</p>
+            </div>
           </div>
         </fieldset>
         <fieldset formGroupName="paymentMethod">
@@ -85,7 +107,15 @@
             formControlName="ccard"
             type="text"
             [inputMask]="creditCardMask"
-            placeholder="____ ____ ____ ____">
+            placeholder="____ ____ ____ ____"
+            >
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('required')  && this.clientProfile.get('paymentMethod.ccard').touched">
+              <p class="error">This field is required</p>
+            </div>
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('creditValidation')  && this.clientProfile.get('paymentMethod.ccard').touched">
+              <p class="error">This field is required</p>
+            </div>
+            <span>{{this.clientProfile.get('paymentMethod.ccard').hasError('creditValidation')}}</span>
           </div>
           <div class="mb-3">
             <label class="form-label"  for="cardholdername">Card Holder Name</label>
