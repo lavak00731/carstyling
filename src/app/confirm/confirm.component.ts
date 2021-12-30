@@ -24,16 +24,15 @@ export class ConfirmComponent implements OnInit, OnDestroy {
     alias: 'datetime',
     inputFormat: 'mm/yyyy',
     parser: (value: string) => {
-      const values = value.split('/');
-      const year = +values[2];
-      const month = +values[1] - 1;
-      return new Date(year, month);
+        const values = value.split('/');
+        const year = parseInt(values[1]);
+        const month = parseInt(values[0]) - 1;
+        return new Date(year, month);
+     
     },
   });
   phoneMask = createMask('9-(999)-999-9999');
   creditCardMask = createMask('9999 9999 9999 9999');
-  
-
   @ViewChild('carCarousel') carCarousel: NgbCarousel;
   @ViewChild('errorBanner') errorBanner: ElementRef;
   //update object
@@ -69,12 +68,24 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   } 
   ngOnInit(): void {
     this.getCar(+this._selection.getSelection()['id']);
-    
+    console.log(Validators);
   }
 
   ngOnDestroy(): void {
     this.service.unsubscribe();
   }
+  expDateValid(): ValidatorFn {
+    return (control:AbstractControl) : ValidationErrors | null => {
+      let isValidDate = false;
+      const now = new Date();
+      const expDate = control.value;
+      if (expDate > now) {
+        isValidDate = true;
+      }
+      return isValidDate ? {creditDateExp: true} : null;
+    }
+  }
+  //credit card number validation
   creditValidation(): ValidatorFn {
     return (control:AbstractControl) : ValidationErrors | null => {
       const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
@@ -86,7 +97,6 @@ export class ConfirmComponent implements OnInit, OnDestroy {
       if (visaRegEx.test(valueFormated) || mastercardRegEx.test(valueFormated) || amexpRegEx.test(valueFormated) || discovRegEx.test(valueFormated)) {
         isValid = true;
       } 
-
       return isValid ? {creditCardValid: true} : null;        
     }
   }
@@ -94,16 +104,16 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   //user form data
   clientProfile = new FormGroup({
     personalData: new FormGroup({
-      firstname: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      lastname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      firstname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       address: new FormControl('', Validators.required),
       phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
       email: new FormControl('', [Validators.required, Validators.email])
     }),
     paymentMethod: new FormGroup({
-      ccard: new FormControl('', [Validators.required, Validators.minLength(3),  this.creditValidation()]),
-      cardholdername: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      expDate: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      ccard: new FormControl('', [Validators.required, this.creditValidation()]),
+      cardholdername: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      expDate: new FormControl('', [Validators.required, this.expDateValid()]),
       secNumber: new FormControl('', [Validators.required, Validators.minLength(3)])
     })
   })
@@ -113,7 +123,6 @@ export class ConfirmComponent implements OnInit, OnDestroy {
     } else {
       this.formValidity = true;
       //focus on error banner
-
       setTimeout(() => {
         this.errorBanner.nativeElement.focus()
       })
