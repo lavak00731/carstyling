@@ -76,13 +76,15 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   }
   expDateValid(): ValidatorFn {
     return (control:AbstractControl) : ValidationErrors | null => {
-      let isValidDate = false;
-      const now = new Date();
-      const expDate = control.value;
-      if (expDate > now) {
-        isValidDate = true;
-      }
-      return isValidDate ? {creditDateExp: true} : null;
+      if(control.value !== '') {
+        let isValidDate = false;
+        const now = new Date();
+        const expDate = control.value;
+        if (now > expDate) {
+          isValidDate = true;
+        }
+        return isValidDate ? {creditDateExp: true} : null;
+      }      
     }
   }
   //credit card number validation
@@ -104,17 +106,17 @@ export class ConfirmComponent implements OnInit, OnDestroy {
   //user form data
   clientProfile = new FormGroup({
     personalData: new FormGroup({
-      firstname: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      lastname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      firstname: new FormControl('', [Validators.required, Validators.pattern(/[a-zA-Z]{3,}/g)]),
+      lastname: new FormControl('', [Validators.required, Validators.pattern(/[a-zA-Z]{3,}/g)]),
       address: new FormControl('', Validators.required),
       phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      email: new FormControl('', [Validators.required, Validators.email])
+      email: new FormControl('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])
     }),
     paymentMethod: new FormGroup({
       ccard: new FormControl('', [Validators.required, this.creditValidation()]),
-      cardholdername: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      cardholdername: new FormControl('', [Validators.required, Validators.pattern(/[a-zA-Z]{6,}/g)]),
       expDate: new FormControl('', [Validators.required, this.expDateValid()]),
-      secNumber: new FormControl('', [Validators.required, Validators.minLength(3)])
+      secNumber: new FormControl('', [Validators.required, Validators.pattern(/^\d{3,4}$/g)])
     })
   })
   validateForm() {

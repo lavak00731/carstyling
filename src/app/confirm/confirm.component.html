@@ -41,7 +41,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.firstname').hasError('required')  && this.clientProfile.get('personalData.firstname').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.firstname').hasError('minlength')  && this.clientProfile.get('personalData.firstname').touched">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.firstname').hasError('pattern')  && this.clientProfile.get('personalData.firstname').touched">
               <p class="error">This field must have 3 characters long.</p>
             </div>
           </div>
@@ -57,7 +57,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.lastname').hasError('required')  && this.clientProfile.get('personalData.lastname').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.lastname').hasError('minlength')  && this.clientProfile.get('personalData.lastname').touched">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.lastname').hasError('pattern')  && this.clientProfile.get('personalData.lastname').touched">
               <p class="error">This field must have 3 characters long.</p>
             </div>
           </div>
@@ -101,7 +101,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.email').hasError('required')  && this.clientProfile.get('personalData.email').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.email').hasError('email')  && (this.clientProfile.get('personalData.email').touched && this.clientProfile.get('personalData.email').dirty)">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.email').hasError('pattern')  && (this.clientProfile.get('personalData.email').touched && this.clientProfile.get('personalData.email').dirty)">
               <p class="error">This field must be a valid email address</p>
             </div>
           </div>
@@ -121,7 +121,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('required')  && this.clientProfile.get('paymentMethod.ccard').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('creditValidation')  && this.clientProfile.get('paymentMethod.ccard').touched">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('creditCardValid')  && this.clientProfile.get('paymentMethod.ccard').touched">
               <p class="error">Enter a valid credit card</p>
             </div>
           </div>
@@ -137,7 +137,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.cardholdername').hasError('required')  && this.clientProfile.get('paymentMethod.cardholdername').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.cardholdername').hasError('minlength')  && this.clientProfile.get('paymentMethod.cardholdername').touched">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.cardholdername').hasError('pattern')  && this.clientProfile.get('paymentMethod.cardholdername').touched">
               <p class="error">This field is required to have al least 6 character length</p>
             </div>
           </div>
@@ -154,8 +154,8 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.expDate').hasError('required')  && this.clientProfile.get('paymentMethod.expDate').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.expDate').hasError('minlength')  && this.clientProfile.get('paymentMethod.expDate').touched">
-              <p class="error">This field is required to have al least 6 character length</p>
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.expDate').hasError('creditDateExp')  && this.clientProfile.get('paymentMethod.expDate').touched">
+              <p class="error">You need to place a valid date</p>
             </div>          
            </div>
            <div class="col">
@@ -170,8 +170,8 @@
               <p class="error">This field is required</p>
             </div>
             <!--Validate using pattern for number and amount of elements-->
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.secNumber').hasError('minlength')  && this.clientProfile.get('paymentMethod.secNumber').touched">
-              <p class="error">This field is required to have al least 3 character length</p>
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.secNumber').hasError('pattern')  && this.clientProfile.get('paymentMethod.secNumber').touched">
+              <p class="error">This field is required to have al least 3 numbers</p>
             </div>
            </div> 
           </div>
