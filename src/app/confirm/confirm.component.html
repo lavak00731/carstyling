@@ -121,9 +121,9 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('required')  && this.clientProfile.get('paymentMethod.ccard').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('creditCardValid')  && this.clientProfile.get('paymentMethod.ccard').touched">
-              <p class="error">Enter a valid credit card</p>
-            </div>
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('paymentMethod.ccard').hasError('creditCardValid') && this.clientProfile.get('paymentMethod.ccard').touched">
+              <p class="error">Enter a valid credit card</p>              
+            </div>           
           </div>
           <div class="mb-3">
             <label class="form-label"  for="cardholdername">Card Holder Name</label>
