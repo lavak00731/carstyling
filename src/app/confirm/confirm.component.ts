@@ -112,8 +112,7 @@ export class ConfirmComponent implements OnInit, OnDestroy {
           isValid = true;
         }
       }
-      console.log(isValid);
-      return isValid ? {creditCardValid: true} : null;        
+      return !isValid ? {creditCardValid: true} : null;        
     }
   }
   
@@ -123,7 +122,7 @@ export class ConfirmComponent implements OnInit, OnDestroy {
       firstname: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]{3,}$/)]),
       lastname: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]{3,}$/)]),
       address: new FormControl('', Validators.required),
-      phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      phone: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]?[-\s\.]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/)]),
       email: new FormControl('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])
     }),
     paymentMethod: new FormGroup({

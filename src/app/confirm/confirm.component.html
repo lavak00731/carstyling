@@ -86,7 +86,7 @@
             <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.phone').hasError('required')  && this.clientProfile.get('personalData.phone').touched">
               <p class="error">This field is required</p>
             </div>
-            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.phone').hasError('minlength')  && this.clientProfile.get('personalData.phone').touched">
+            <div class="error-wrapper" *ngIf="this.clientProfile.get('personalData.phone').hasError('pattern')  && this.clientProfile.get('personalData.phone').touched">
               <p class="error">This field must have 8 characters long.</p>
             </div>
           </div>
